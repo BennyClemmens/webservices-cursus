@@ -1,0 +1,20 @@
+{
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "editor.linkedEditing": true,
+  "errorLens.delay": 500,
+  "errorLens.enabledDiagnosticLevels": ["error", "warning", "info"],
+  "errorLens.messageTemplate": "$severity $message $count ($source - $code)",
+  "errorLens.severityText": ["❗️ ", "⚠️ ", "ℹ️ ", "💡 "],
+  "editor.guides.bracketPairs": "active",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2
+  }
