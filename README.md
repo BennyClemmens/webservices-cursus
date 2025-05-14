@@ -6,7 +6,7 @@ This git repo was created following the OLOD Webservices @ HoGent in 2024-2025. 
 
 - [Algemene info](01_algemene_info.md)
 - [Software](02_software.md)
-- Examenopdracht
+- [Examenopdracht](03_examenopdracht.md)
 
 1. TypeScript
 2. REST API intro
