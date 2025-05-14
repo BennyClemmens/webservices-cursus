@@ -4,7 +4,7 @@ This git repo was created following the OLOD Webservices @ HoGent in 2024-2025. 
 
 ## Content
 
-- Algemene info
+- [Algemene info](01_algemene_info.md)
 - Software
 - Examenopdracht
 
