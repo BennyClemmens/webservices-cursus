@@ -1,5 +1,11 @@
 # [^](README.md) Web Services Opdracht 2024 - 2025
 
+## Lesopname
+
+- [hogent](https://chamilo.hogent.be/index.php?go=CourseViewer&application=Chamilo%5CApplication%5CWeblcms&course=61464&tool=LectureCapture&browser=Hogent%5CApplication%5CWeblcms%5CTool%5CImplementation%5CLectureCapture%5CRenderer%5CVideoPublicationListRenderer&tool_action=viewer&publication=2410884)
+- [panopto](https://hogent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=174ed677-dea0-4f16-bd21-b1f700f6a6f1&start=0)
+- `D:/DATA/Videos/WEBSERVICES/H0_Algemene_info_en_examenopdracht.mp4`
+
 ## De opdracht
 
 Gedurende het semester maak je een API in Node.js. Als je ook het olod Front-end Web Development volgt, zal de API dienen als back-end voor de applicatie die je daar maakt. Indien je het olod Front-end Web Development niet volgt, maak je gewoon een API.
@@ -7,6 +13,15 @@ Gedurende het semester maak je een API in Node.js. Als je ook het olod Front-end
 Je bent volledig vrij om te kiezen welke API je ontwikkelt. Indien je twijfelt over jouw idee, mag je altijd eerst met je lector overleggen tijdens de les of een GitHub issue aanmaken.
 
 Alle code moet in een GitHub classroom repository terecht komen (zie Chamilo voor een link naar de classroom). Enkel de **main** branch van deze repository zal geëvalueerd worden. Er wordt automatisch een template van de **README.md** aangemaakt als je de opdracht accepteert, vul deze correct in. Je gebruikt dezelfde repository voor zowel Web Services als Front-end Web Development.
+
+> [link](https://github.com/HOGENT-frontendweb/frontendweb-2425-BennyClemmens.git) naar de aangemaakte repo
+
+```code
+Benny@FLAB2021 MINGW64 /C/DATA/GIT/WEBSERVICES/frontendweb-2425-BennyClemmens (main)
+$ git remote -v
+origin  https://github.com/HOGENT-frontendweb/frontendweb-2425-BennyClemmens.git (fetch)
+origin  https://github.com/HOGENT-frontendweb/frontendweb-2425-BennyClemmens.git (push)
+```
 
 Het is belangrijk dat de applicatie significant verschilt van de voorbeeldapplicatie die tijdens de les gemaakt wordt.
 

@@ -1,5 +1,11 @@
 # [^](README.md) Algemene info
 
+## Lesopname
+
+- [hogent](https://chamilo.hogent.be/index.php?go=CourseViewer&application=Chamilo%5CApplication%5CWeblcms&course=61464&tool=LectureCapture&browser=Hogent%5CApplication%5CWeblcms%5CTool%5CImplementation%5CLectureCapture%5CRenderer%5CVideoPublicationListRenderer&tool_action=viewer&publication=2410884)
+- [panopto](https://hogent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=174ed677-dea0-4f16-bd21-b1f700f6a6f1&start=0)
+- `D:/DATA/Videos/WEBSERVICES/H0_Algemene_info_en_examenopdracht.mp4`
+
 ## Situering
 
 Dit olod behoort tot de keuzepakketten **Development** en **AI & Data Engineer**, zoals je hieronder kan zien:
