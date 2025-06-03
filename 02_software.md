@@ -73,6 +73,74 @@ pager.branch=false
 pager.log=false
 ```
 
+```code
+PS C:\Windows\system32> winget install github.cli
+Found GitHub CLI [GitHub.cli] Version 2.74.0
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Downloading https://github.com/cli/cli/releases/download/v2.74.0/gh_2.74.0_windows_amd64.msi
+  ██████████████████████████████  13.3 MB / 13.3 MB
+Successfully verified installer hash
+Starting package install...
+Successfully installed
+```
+
+```code
+benny@FLAB2025 MINGW64 ~
+$ gh --version
+gh version 2.74.0 (2025-05-29)
+https://github.com/cli/cli/releases/tag/v2.74.0
+
+benny@FLAB2025 MINGW64 ~
+$ gh auth login
+? Where do you use GitHub? GitHub.com
+? What is your preferred protocol for Git operations on this host? SSH
+? Upload your SSH public key to your GitHub account? C:\Users\benny\.ssh\id_ed25519_github.pub
+? Title for your SSH key: (GitHub CLI) FLAB2025github
+
+? Title for your SSH key: FLAB2025github
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 3F06-3A40
+Press Enter to open https://github.com/login/device in your browser...
+✓ Authentication complete.
+- gh config set -h github.com git_protocol ssh
+✓ Configured git protocol
+✓ Uploaded the SSH key to your GitHub account: C:\Users\benny\.ssh\id_ed25519_github.pub
+✓ Logged in as BennyClemmens
+
+benny@FLAB2025 MINGW64 ~
+$ gh auth refresh -h github.com -s admin:ssh_signing_key
+
+! First copy your one-time code: 0A97-2666
+Press Enter to open https://github.com/login/device in your browser...
+✓ Authentication complete.
+
+benny@FLAB2025 MINGW64 ~
+$ gh ssh-key add ~/.ssh/id_ed25519_github.pub --type signing
+✓ Public key added to your account
+
+benny@FLAB2025 MINGW64 ~
+$ gh ssh-key add ~/.ssh/id_ed25519_github.pub --type authentication
+✓ Public key already exists on your account
+
+benny@FLAB2025 MINGW64 /d/DATA/GIT
+$ mkdir WEBSERVICES
+
+benny@FLAB2025 MINGW64 /d/DATA/GIT
+$ cd WEBSERVICES
+
+benny@FLAB2025 MINGW64 /d/DATA/GIT/WEBSERVICES
+$ git clone git@github.com:BennyClemmens/webservices-cursus.git
+Cloning into 'webservices-cursus'...
+remote: Enumerating objects: 23, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 23 (delta 7), reused 22 (delta 6), pack-reused 0 (from 0)
+Receiving objects: 100% (23/23), 2.26 MiB | 796.00 KiB/s, done.
+Resolving deltas: 100% (7/7), done.
+```
+
 ## Node.js
 
 Installeer Node.js (**minimaal versie 22.9.0**) via een package manager:

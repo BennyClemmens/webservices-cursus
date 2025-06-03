@@ -14,7 +14,7 @@
   "editor.guides.bracketPairs": "active",
   "editor.bracketPairColorization.enabled": true,
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.tabSize": 2
   }
