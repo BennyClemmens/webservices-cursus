@@ -136,7 +136,7 @@ We merken echter dat Prisma ons schema buiten de `src` map plaatst. Dit is niet 
     "schema": "src/data/schema.prisma"
   }
 }
-Kopieer```
+```
 
 Vervolgens verplaatsen we `schema.prisma` naar `src/data/schema.prisma` en verwijderen we de `prisma` map. We bekijken de inhoud van `schema.prisma`:
 
