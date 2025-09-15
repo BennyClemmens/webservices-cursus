@@ -16,5 +16,12 @@
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
-  "editor.tabSize": 2
-  }
+  "editor.tabSize": 2,
+  "editor.tabFocusMode": false,
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 3,
+  "editor.cursorBlinking": "phase",
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#FF0000",
+  },
+}

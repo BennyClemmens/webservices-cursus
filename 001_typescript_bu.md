@@ -13,7 +13,7 @@ Jullie hebben reeds kennis gemaakt met JavaScript in het olod Web Development II
 Laten we eens vragen aan ChatGPT wat TypeScript is:
 
 <p align="center">
-  <img src="img/typescript_chatgpt.png" style="width:50%;" alt="TypeScript volgens ChatGPT">
+  <img src="img/typescript_chatgpt.png" style="width:80%;" alt="TypeScript volgens ChatGPT">
 </p>
 
 TypeScript is heel simpel gezegd: "JavaScript met types". Het is een superset van JavaScript, wat wil zeggen dat elke JavaScript code ook TypeScript code is. TypeScript voegt enkel types toe aan JavaScript. Onderstaande functie is dus perfect geldige TypeScript code:
@@ -35,6 +35,8 @@ function add(a: number, b: number): number {
 ```
 
 Deze types worden enkel gebruikt tijdens het schrijven van de code en worden verwijderd tijdens het uitvoeren van de code. TypeScript moet vertaald worden naar JavaScript om uitgevoerd te kunnen worden, dit wordt **transpiling** genoemd.
+
+`Als je .ts probeert te transpilen wordt aan de hand van de settings van de transpiler bepaald welke fouten worden gegenereerd, zoals bijvoorbeeld het niet toelaten van implicit any's. Veel variatie in de config is mogelijk, zie verderop.`
 
 TypeScript is ontwikkeld door Microsoft en is open-source. Het is een populaire taal in de wereld van web development (zie <https://2023.stateofjs.com/en-US/usage/#js_ts_balance>). TypeScript wordt tegenwoordig meer gebruikt dan pure JavaScript omwille van de types, ES6+ features en soms OO features (als je hiervan houdt). Natuurlijk maakt TypeScript code soms complexer en langer, maar dit weegt niet op tegen de voordelen.
 
@@ -68,6 +70,22 @@ function testVreemd(): void {
 function test(): never {
   return; // <-- compile error
 }
+```
+
+```bash
+PS C:\DATA\GIT\WEBSERVICES\webservices-cursus\src> yarn tsc .\001_b_typeerror.ts
+yarn run v1.22.22
+$ C:\DATA\GIT\WEBSERVICES\webservices-cursus\src\node_modules\.bin\tsc .\001_b_typeerror.ts
+001_b_typeerror.ts:6:3 - error TS2322: Type 'undefined' is not assignable to type 'never'.
+
+6   return; // <-- compile error
+    ~~~~~~
+
+
+Found 1 error in 001_a_typeerror.ts:6
+
+error Command failed with exit code 2.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 ```
 
 Er zijn ook enkele types voor de OO-mensen onder ons:
@@ -106,9 +124,52 @@ Antwoord
 
 >> **value** is beschikbaar in de hele functie, dus op de plaatsen 1, 2, 3 en 4. Dit wordt **hoisting** genoemd.
 
+```bash
+PS C:\DATA\GIT\WEBSERVICES\webservices-cursus\src> yarn tsx .\001_c_hoisting.ts 
+yarn run v1.22.22
+$ C:\DATA\GIT\WEBSERVICES\webservices-cursus\src\node_modules\.bin\tsx .\001_c_hoisting.ts
+1: undefined
+2: yes
+4: yes
+1: undefined
+3: undefined
+4: undefined
+Done in 0.70s.
+```
+
 Het wordt aangeraden om **let** en **const** te gebruiken, omdat dit de scope van de variabele beperkt tot het blok waarin ze gedeclareerd is. **let** wordt gebruikt voor variabelen die van waarde kunnen veranderen, **const** voor variabelen die een constante waarde hebben.
 
-<!-- Welke waarde zal er geprint worden in onderstaande code? -->
+Welke waarde zal er geprint worden in onderstaande code?
+
+```bash
+function getValueWithVar() {
+  var value = 5;
+  if (true) {
+    var value = 6;
+  }
+  console.log(`In getValueWithVar: ${value}`);
+}
+
+function getValueWithLet() {
+  let value = 5;
+  if (true) {
+    let value = 6;
+  }
+  console.log(`In getValueWithLet: ${value}`);
+}
+
+getValueWithVar();
+getValueWithLet();
+```
+
+```bash
+PS C:\DATA\GIT\WEBSERVICES\webservices-cursus\src> yarn tsx .\001_d_varletconst.ts
+yarn run v1.22.22
+$ C:\DATA\GIT\WEBSERVICES\webservices-cursus\src\node_modules\.bin\tsx .\001_d_varletconst.ts
+In getValueWithVar: 6
+In getValueWithLet: 5
+Done in 0.91s.
+```
 
 ## Type inference
 
@@ -130,6 +191,21 @@ console.log('Type of d:', typeof d); // object - nja, null is niet echt een obje
 console.log('Type of e:', typeof e); // undefined
 console.log('Type of f:', typeof f); // object - eigenlijk is dit number[]
 console.log('Type of g:', typeof g); // object - eigenlijk willen we hier ook een mooier type
+```
+
+```bash
+PS C:\DATA\GIT\WEBSERVICES\webservices-cursus\src> yarn tsx .\001_e_types.ts
+yarn run v1.22.22
+$ C:\DATA\GIT\WEBSERVICES\webservices-cursus\src\node_modules\.bin\tsx .\001_e_types.ts
+Type of a: number
+Type of b: string
+Type of c: boolean
+Type of d: object
+Type of e: undefined
+Type of f: object
+Type of g: object
+Type of g.a: number
+Done in 0.61s.
 ```
 
 Een andere waarde toekennen aan een variabele is ook een vorm van type inference. TypeScript laat hierbij niet toe dat je een waarde toekent die niet overeenkomt met het type van de variabele. Afhankelijk van de instellingen van de compiler zal dit een fout of een waarschuwing geven.
@@ -163,6 +239,8 @@ Je kan het zelfs nog wat complexer maken:
 let x = [1, 'hello', null];
 // het type van x is (number | string | null)[]
 ```
+
+`type van x blijkt 'object' te zijn`
 
 In de documentatie van TypeScript kan je ook lezen dat type inference in de omgekeerde richting ook werkt, dit heet **contextual typing**. Zie hiervoor <https://www.typescriptlang.org/docs/handbook/type-inference.html#contextual-typing>
 
@@ -327,7 +405,7 @@ type OnlyEmail = Pick<Person, 'email'>;
 type FullName = Pick<Person, 'firstName' | 'lastName'>;
 ```
 
-TypeScript heeft nog ontzettend veel mogelijkheden om types te manipuleren, maar dit valt buiten de scope van deze cursus. Je kan alles vinden in de {TypeScript Handbook}(https://www.typescriptlang.org/docs/handbook/2/types-from-types.html).
+TypeScript heeft nog ontzettend veel mogelijkheden om types te manipuleren, maar dit valt buiten de scope van deze cursus. Je kan alles vinden in de {$[TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html).
 
 ## Functioneel programmeren
 
