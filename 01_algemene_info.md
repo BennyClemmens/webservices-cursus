@@ -13,9 +13,11 @@ Dit olod behoort tot de keuzepakketten **Development** en **AI & Data Engineer**
 <!--
 ![Dit olod in de keuzepakketten](img/MT_olods.png)
 -->
+<!-- markdownlint-disable -->
 <p align="center">
   <img src="img/MT_olods.png" style="width:50%;">
 </p>
+<!-- markdownlint-enable -->
 
 Indien je in het keuzepakket **Development** zit, dan volg je waarschijnlijk Front-end Web Development gelijktijdig met dit olod. Indien je in het keuzepakket **AI & Data Engineer** zit, dan volg je enkel dit olod.
 

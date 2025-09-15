@@ -14,7 +14,7 @@ Je bent volledig vrij om te kiezen welke API je ontwikkelt. Indien je twijfelt o
 
 Alle code moet in een GitHub classroom repository terecht komen (zie Chamilo voor een link naar de classroom). Enkel de **main** branch van deze repository zal geëvalueerd worden. Er wordt automatisch een template van de **README.md** aangemaakt als je de opdracht accepteert, vul deze correct in. Je gebruikt dezelfde repository voor zowel Web Services als Front-end Web Development.
 
-> [link](https://github.com/HOGENT-frontendweb/frontendweb-2425-BennyClemmens.git) naar de aangemaakte repo
+> [link naar github repo](https://github.com/HOGENT-frontendweb/frontendweb-2425-BennyClemmens.git) naar de aangemaakte repo
 
 ```code
 Benny@FLAB2021 MINGW64 /C/DATA/GIT/WEBSERVICES/frontendweb-2425-BennyClemmens (main)

@@ -12,9 +12,11 @@ Jullie hebben reeds kennis gemaakt met JavaScript in het olod Web Development II
 
 Laten we eens vragen aan ChatGPT wat TypeScript is:
 
+<!-- markdownlint-disable -->
 <p align="center">
   <img src="img/typescript_chatgpt.png" style="width:80%;" alt="TypeScript volgens ChatGPT">
 </p>
+<!-- markdownlint-enable -->
 
 TypeScript is heel simpel gezegd: "JavaScript met types". Het is een superset van JavaScript, wat wil zeggen dat elke JavaScript code ook TypeScript code is. TypeScript voegt enkel types toe aan JavaScript. Onderstaande functie is dus perfect geldige TypeScript code:
 
@@ -377,11 +379,11 @@ In dit voorbeeld is het property **state** gedeeld. TypeScript kan dit property 
 
 TypeScript heeft ook heel wat [utility types](https://www.typescriptlang.org/docs/handbook/utility-types.html). Dit zijn types die je kan gebruiken om andere types te maken. De meest gebruikte utility types zijn:
 
-- **Partial<Type>**: maakt een type optioneel
-- **Omit<Type, Keys>**: verwijdert een of meerdere properties van een type
-- **Record<Keys, Types>**: maakt een type voor een object met properties met naam volgens **Keys** en type volgens **Types**
-- **Pick<Type, Keys>**: haalt een of meerdere properties (**Keys**) op uit een type (**Type**)
-- **...**
+- **`Partial<Type>`**: maakt een type optioneel
+- **`Omit<Type, Keys>`**: verwijdert een of meerdere properties van een type
+- **`Record<Keys, Types>`**: maakt een type voor een object met properties met naam volgens **Keys** en type volgens **Types**
+- **`Pick<Type, Keys>`**: haalt een of meerdere properties (**Keys**) op uit een type (**Type**)
+- **`...`**
 
 ```bash
 type MyExample = {
@@ -405,7 +407,7 @@ type OnlyEmail = Pick<Person, 'email'>;
 type FullName = Pick<Person, 'firstName' | 'lastName'>;
 ```
 
-TypeScript heeft nog ontzettend veel mogelijkheden om types te manipuleren, maar dit valt buiten de scope van deze cursus. Je kan alles vinden in de {$[TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html).
+TypeScript heeft nog ontzettend veel mogelijkheden om types te manipuleren, maar dit valt buiten de scope van deze cursus. Je kan alles vinden in de [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html).
 
 ## Functioneel programmeren
 
@@ -623,7 +625,7 @@ console.log(add(1, 2));
 console.log(add2(1, 2));
 ```
 
-> Output: 
+> Output:
 
 ```bash
 3
@@ -981,6 +983,7 @@ numbers.forEach((number) => {
 });
 console.log(doubled);
 ```
+
 > Output
 
 ```bash
@@ -1002,7 +1005,7 @@ const firstEven = numbers.find((number) => {
 console.log(firstEven);
 ```
 
-> Output: 
+> Output:
 
 ```bash
 2

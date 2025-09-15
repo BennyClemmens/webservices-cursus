@@ -6,9 +6,7 @@
 - [panopto](TODO)
 - `D:/DATA/Videos/WEBSERVICES/H006_TODO.mp4`
 
-## Wat
-
-**Startpunt voorbeeldapplicatie**
+## Startpunt voorbeeldapplicatie
 
 ```bash
 git clone https://github.com/HOGENT-frontendweb/webservices-budget.git
@@ -17,9 +15,11 @@ git checkout -b les6 88651f0
 yarn install
 yarn prisma migrate dev
 yarn start:dev
-
 ```
+
 Vergeet geen `.env` aan te maken! Bekijk de [*README*](https://github.com/HOGENT-frontendweb/webservices-budget?tab=readme-ov-file#webservices-budget) voor meer informatie.
+
+## Wat
 
 Heel wat REST API's die je online vindt, gaan er vanuit dat de invoer altijd correct is, geven totaal verkeerde foutmeldingen terug, of geven helemaal geen foutmeldingen. Dit is een bad practice! Een goede API geeft duidelijke foutmeldingen terug en valideert de invoer. Invoervalidatie is belangrijk voor de integriteit van de data en de veiligheid van de applicatie. Degelijke foutboodschappen helpen de gebruikers van de API om fouten te begrijpen en te corrigeren, indien mogelijk.
 
@@ -98,14 +98,14 @@ getTransactionById.validationScheme = {
 };
 ```
 
-1. We importeren Joi.
-2. Vervolgens definiëren we een property `validationScheme` op onze functie `getTransactionById`. Herinner je: functies zijn zoals objecten, ze kunnen properties hebben.
-3. Dit request kan enkel URL parameters bevatten. We schrijven de validatie hiervoor in een property `params`.
+- (1) We importeren Joi.
+- (2) Vervolgens definiëren we een property `validationScheme` op onze functie `getTransactionById`. Herinner je: functies zijn zoals objecten, ze kunnen properties hebben.
+- (3) Dit request kan enkel URL parameters bevatten. We schrijven de validatie hiervoor in een property `params`.
   - Params moet sowieso een object zijn, dus we gebruiken `{}`.
   - `id`: de naam van de parameter.
   - `Joi.number()`: het moet een geheel getal zijn, een id kan bv. nooit 1,5 of 12,345 zijn.
   - `positive()`: en het moet positief zijn.
--   `required()`: we kunnen expliciet aangeven dat iets verplicht is of optioneel via `optional()`. Maar we laten beide functies hier achterwege. Straks stellen we in dat alles standaard `required` is, dat bespaart wat werk. In een API is typisch meer `required` dan `optional`.
+  - `required()`: we kunnen expliciet aangeven dat iets verplicht is of optioneel via `optional()`. Maar we laten beide functies hier achterwege. Straks stellen we in dat alles standaard `required` is, dat bespaart wat werk. In een API is typisch meer `required` dan `optional`.
 
 #### Validatie middleware
 
@@ -259,6 +259,7 @@ router.get(
 
 // ...
 ```
+
 - (1) We importeren onze nieuwe middleware.
 - (2) De validatie dient te gebeuren alvorens de functie `getTransactionById` wordt uitgevoerd. Dus we voegen de middleware vóór deze functie toe. In het geval van een fout zal een HTTP status 400 geretourneerd worden en wordt `getTransactionById` niet meer uitgevoerd.
   - Merk op: Nu kan je ook de conversie met `Number(...)` verwijderen uit `getTransactionById` (Joi doet de conversie voor ons).
@@ -267,7 +268,7 @@ router.get(
 
 Als volgende voorbeeld voegen we invoervalidatie toe voor de request body van de `POST /api/transactions`.
 
-#### Definitie schema
+#### Definitie schema transactions
 
 Ook voor de `POST /api/transactions` definiëren we een schema voor invoervalidatie. Voeg dit toe aan `src/rest/transactions.ts`:
 
@@ -353,6 +354,7 @@ router.get(
   getAllTransactions,
 );
 ```
+
 Als laatste werken we onze `validate` functie af met query parameter validatie. Dit is de enige mogelijkheid die we nog niet hebben toegevoegd.
 
 ```ts
@@ -512,7 +514,7 @@ export default class ServiceError extends Error {
 
 - (1) Definieer de klasse ServiceError.
 - (2) Definieer een aantal constante strings die alle mogelijke errors voorstellen.
--   Je zou ook specifieke errors kunnen definiëren, bv. `PLACE_NOT_FOUND` of `TRANSACTION_NOT_FOUND`. In dit geval laat je deze constanten weg en gebruik je gewoon de constructor met de string als parameter.
+  - Je zou ook specifieke errors kunnen definiëren, bv. `PLACE_NOT_FOUND` of `TRANSACTION_NOT_FOUND`. In dit geval laat je deze constanten weg en gebruik je gewoon de constructor met de string als parameter.
   - We voegen volgende foutcodes toe:
     - `NOT_FOUND`: een resource wordt niet gevonden wordt.
     - `VALIDATION_FAILED`: de client geeft foutieve invoer
@@ -601,6 +603,7 @@ app.use(async (ctx, next) => {
   }
 });
 ```
+
 - (1) Importeer onze `ServiceError`.
 - (2) Haal de `NODE_ENV` op uit de config.
 - (3) Voeg een stukje middleware toe.
@@ -819,8 +822,7 @@ Werk aan je eigen project:
 
 > 💡 Tip: als extra functionaliteit kan je een andere validatie library of middleware gebruiken. Zorg er wel voor dat deze library minstens ondersteuning heeft voor validatie van URL parameters, query parameters en request body.
 
-
-> Oplossing voorbeeldapplicatie
+## Oplossing voorbeeldapplicatie
 
 ```bash
 git clone https://github.com/HOGENT-frontendweb/webservices-budget.git

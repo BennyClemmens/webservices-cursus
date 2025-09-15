@@ -184,17 +184,17 @@ export const getLogger = () => {
 };
 ```
 
-- (1)	We vragen het config object op
+- (1) We vragen het config object op
 - (2) Alle gedefinieerde configuratievariabelen zijn beschikbaar via een `.get()`. Je kan een syntax met punten gebruiken om dieper in de structuur te gaan, bv. `log.level` om het property level binnen het object log op te vragen.
   - Let op dat je de types meegeeft tussen de `<>` haakjes. Dit zijn generieke types, je kan ze zien als een soort van argumenten die je meegeeft aan een functie. In dit geval geef je het type van de waarde die je verwacht terug te krijgen mee. TypeScript zorgt er vervolgens voor dat de returnwaarde van `config.get` van dat type is.
   - Als je bv. `config.get('log.level')` zou schrijven, zou TypeScript klagen bij het instellen van het level dat het type van de variabele `LOG_LEVEL` niet overeenkomt met het type dat de optie level verwacht. Probeer dit eens uit.
-- (3)	Pas ook de hardgecodeerde waarden aan, zodat we de config gebruiken. We schakelen de logging uit als `log.disabled` de waarde `true` heeft.
-- (4)	Je kan de environment variabelen ook expliciet opvragen, via het `env` uit `node:process`.
+- (3) Pas ook de hardgecodeerde waarden aan, zodat we de config gebruiken. We schakelen de logging uit als `log.disabled` de waarde `true` heeft.
+- (4) Je kan de environment variabelen ook expliciet opvragen, via het `env` uit `node:process`.
   - `node:process` is een ingebouwde module om informatie op te vragen over het proces, zoals de omgevingsvariabelen via `env`.
   - `env` is een object met alle omgevingsvariabelen. Omdat je niet weet wat in het object zit, kan je de waarde opvragen via de key, bv. `env['NODE_ENV']`.
   - Dat is natuurlijk een beetje onhandig, je moet weten welke configuratie via het environment binnenkomt, en welke via de configuratiebestanden. En wat als iets in beide gedefinieerd is? Het is beter om alles via de configuratie te laten lopen, dit lossen we op in de volgende stap.
 - (5) Start de app en controleer dat alles werkt. We moeten dus 'info' zien, want `NODE_ENV` is gelijk aan 'production'.
-- (6)	Pas de waarde van `NODE_ENV` aan in je `.env` bestand aan naar development en start de app opnieuw. Je zou nu 'development' moeten zien.
+- (6) Pas de waarde van `NODE_ENV` aan in je `.env` bestand aan naar development en start de app opnieuw. Je zou nu 'development' moeten zien.
 - (7) Verwijder de `console.log` als alles werkt, deze hebben we enkel gebruikt om te testen.
 
 Gelukkig heeft `config` een manier om environment variabelen mee in te lezen in de configuratie zodat we alles kunnen opvragen via `config.get()`. Op die manier staat **alle configuratie centraal**, dit is een best practice! Maak een bestand binnen de `config` map met de naam `custom-environment-variables.ts`. Let op de schrijfwijze, een schrijffout zal ervoor zorgen dat het niet werkt.
@@ -225,7 +225,7 @@ const NODE_ENV = config.get<string>('env'); // 👈
 
 Nu is het tijd om aan onze API te starten! In dit voorbeeld werken we alle CRUD operaties uit voor transacties, d.w.z.:
 
--	`GET /api/transactions`: alle transacties opvragen
+- `GET /api/transactions`: alle transacties opvragen
 - `GET /api/transactions/:id`: een specifieke transactie opvragen
 - `POST /api/transactions`: een nieuwe transactie aanmaken
 - `PUT /api/transactions/:id`: een transactie aanpassen
@@ -539,7 +539,7 @@ app.use(router.routes()).use(router.allowedMethods());
 - (1) Voeg de POST route toe. We negeren even de foutmeldingen die TypeScript geeft, die lossen we later op.
 - (2) Roep de `create` functie van de service aan. We destructuren de `request.body` (waarin de transaction als JSON verwacht wordt) om onze datum alvast om te zetten naar een `Date` type, en de `placeId` naar een `Number` type. In het hoofdstuk rond validatie volgt hiervoor een betere oplossing!
 - (3) Geef de net toegevoegde transaction ook weer terug vanuit de `create` via de response body. Het lijkt misschien wat raar om eigenlijk hetzelfde terug te geven dan wat je binnen kreeg maar dat is meestal een goed idee. Daarmee weet de gebruiker van de API hoe je het opgeslagen hebt, wat niet noodzakelijk hetzelfde is als hoe hij het doorgaf. Bijvoorbeeld: bij ons kan de omzetting van de datum iets wijzigen en sowieso zal er een `'id'` toegevoegd zijn.
-- 
+
 Dan moeten we nog onze `create` implementeren in de servicelaag.
 
 ```ts
@@ -609,7 +609,7 @@ router.get('/api/transactions/:id', async (ctx) => {
 });
 ```
 
-- (1)	We doen dit door opnieuw een GET request te definiëren, maar nu met een `:id` parameter erbij.
+- (1) We doen dit door opnieuw een GET request te definiëren, maar nu met een `:id` parameter erbij.
 - (2) Wat er in de URL stond op die plaats kan je terugvinden in `ctx.params.id`. Dat `id` gebruiken we vervolgens om onze `getById` aan te spreken. We moeten de parameter omzetten naar een getal aangezien de URL een string is, zo is ook de parameter een string. In het hoofdstuk rond validatie volgt hiervoor een betere oplossing!
   - Negeer opnieuw een eventuele foutmelding van TypeScript.
 
@@ -1064,6 +1064,3 @@ yarn start:dev
 ```
 
 Laatste aanpassing op 09/10/2024 18:25
-
-
-
