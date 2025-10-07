@@ -20,3 +20,7 @@ I took the course again in 2025-2026. Since Koa was replaced with NestJS there a
 8. [Testen: authenticatie & autorisatie](2024/008_testen_authenticatie_en_autorisatie.md)
 9. [API documentatie](2024/009_api_documentatie.md)
 10. [CI/CD](2024/010_ci_cd.md)
+
+## Content 2025-2026
+
+- [Algemene info](2025/01_algemene_info.md)
