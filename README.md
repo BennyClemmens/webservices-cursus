@@ -26,3 +26,5 @@ I took the course again in 2025-2026. Since Koa was replaced with NestJS there a
 - [Algemene info](2025/01_algemene_info.md)
 - [Software](2025/02_software.md)
 - [Examenopdracht](2025/03_examenopdracht.md)
+
+1. [TypeScript](2025/001_typescript.md)
