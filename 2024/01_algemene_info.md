@@ -1,4 +1,4 @@
-# [^](README.md) Algemene info
+# [^](../README.md) Algemene info
 
 ## Lesopname
 

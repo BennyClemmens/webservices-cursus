@@ -1,4 +1,4 @@
-# [^](README.md) Authenticatie en autorisatie
+# [^](../README.md) Authenticatie en autorisatie
 
 ## Lesopname
 

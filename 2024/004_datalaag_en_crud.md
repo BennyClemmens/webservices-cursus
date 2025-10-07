@@ -1,4 +1,4 @@
-# [^](README.md) Datalaag en CRUD
+# [^](../README.md) Datalaag en CRUD
 
 ## Lesopname
 

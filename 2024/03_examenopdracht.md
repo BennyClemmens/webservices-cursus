@@ -1,4 +1,4 @@
-# [^](README.md) Web Services Opdracht 2024 - 2025
+# [^](../README.md) Web Services Opdracht 2024 - 2025
 
 ## Lesopname
 

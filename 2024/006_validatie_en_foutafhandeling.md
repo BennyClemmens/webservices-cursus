@@ -1,4 +1,4 @@
-# [^](README.md) Validatie en foutafhandeling
+# [^](../README.md) Validatie en foutafhandeling
 
 ## Lesopnames
 

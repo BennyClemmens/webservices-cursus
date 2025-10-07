@@ -1,4 +1,4 @@
-# [^](README.md) CI/CD
+# [^](../README.md) CI/CD
 
 ## Lesopname
 

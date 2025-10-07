@@ -1,4 +1,4 @@
-# [^](README.md) Typescript
+# [^](../README.md) Typescript
 
 ## Lesopname
 

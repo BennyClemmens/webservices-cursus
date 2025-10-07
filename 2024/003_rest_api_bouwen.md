@@ -1,4 +1,4 @@
-# [^](README.md) REST API intro
+# [^](../README.md) REST API intro
 
 ## Lesopname
 

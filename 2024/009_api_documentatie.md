@@ -1,4 +1,4 @@
-# [^](README.md) API documentatie
+# [^](../README.md) API documentatie
 
 ## Lesopname
 

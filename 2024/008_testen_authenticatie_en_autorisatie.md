@@ -1,4 +1,4 @@
-# [^](README.md) Testen: authenticatie en autorisatie
+# [^](../README.md) Testen: authenticatie en autorisatie
 
 ## Lesopname
 
