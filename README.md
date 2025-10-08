@@ -28,3 +28,4 @@ I took the course again in 2025-2026. Since Koa was replaced with NestJS there a
 - [Examenopdracht](2025/03_examenopdracht.md)
 
 1. [TypeScript](2025/001_typescript.md)
+2. [REST API intro](2025/002_rest_api_intro.md)
