@@ -191,7 +191,7 @@ pnpm add -D drizzle-kit
 
 Na de installatie voer je het volgende commando uit om te selecteren welke packages gebuild mogen worden:
 
-```
+```bash
 pnpm approve-builds
 
 # Selecteer alles door op de letter a te drukken
@@ -248,7 +248,7 @@ Dit bestand definieert een aantal zaken:
 - `out`: de map waarin de migraties worden opgeslagen
 - `dbCredentials`: de connectiegegevens van de databank
   - In ons geval halen we deze uit de environment variabele `DATABASE_URL`
- - We gooien een error als deze variabele niet bestaat
+  - We gooien een error als deze variabele niet bestaat
 
 ### Configuratie aanvullen
 
@@ -287,7 +287,7 @@ export interface ServerConfig {
 In NestJS wordt de connectie met de databank best als provider aangeboden. Op die manier zijn we zeker dat er slechts één connectie is in de volledige applicatie. We maken hiervoor een `drizzle` module aan:
 
 ```bash
-nest generate module drizzle
+pnpm nest generate module drizzle
 ```
 
 Dit genereert een bestand `src/drizzle/drizzle.module.ts` met onze DrizzleModule.
@@ -376,7 +376,7 @@ Het ERD waar we uiteindelijk naartoe willen, ziet er zo uit (zie vorig hoofdstuk
 In dit hoofdstuk beginnen we met het definiëren van enkel de places tabel. Het schema voor onze databank schrijven we in het bestand `src/drizzle/schema.ts`:
 
 ```ts
-// src/drizzle.schema.ts
+// src/drizzle/schema.ts
 import {
   int,
   mysqlTable,
@@ -772,8 +772,8 @@ export class PlaceService {
 
 Hier gebruiken we de ORM interface van Drizzle (via het `query` property). Drizzle voorziet namelijk twee interfaces om queries uit te voeren:
 
-- (1) een SQL-like interface, zie https://orm.drizzle.team/docs/select
-- (2) een ORM interface, zie https://orm.drizzle.team/docs/rqb
+- (1) een SQL-like interface, zie <https://orm.drizzle.team/docs/select>
+- (2) een ORM interface, zie <https://orm.drizzle.team/docs/rqb>
 
 We gebruiken hier de ORM interface aangezien deze eenvoudiger is voor eenvoudige queries. We halen alle plaatsen op via de `findMany` functie. In sommige gevallen is de ORM interface echter te beperkt en moet je de SQL-like interface gebruiken. Tijdens het programmeren zal je snel merken welke interface je in welk geval het best gebruikt.
 
@@ -894,7 +894,7 @@ export class PlaceService {
 }
 ```
 
-### Oefening - Je eigen project
+### Afsluitende oefening - Je eigen project
 
 - (1) Vervolledig de service en controller van de entiteit die je in de vorige oefeningen hebt aangemaakt zodat deze de databank gebruikt i.p.v. mock data.
 - (2) Maak de nodige methoden in de controllers async.
@@ -923,4 +923,4 @@ Vergeet geen `.env` aan te maken! Bekijk de [README](https://github.com/HOGENT-f
   - Let op: wisselen van MySQL naar bv. PostgreSQL is geen extra. Dit blijft nog steeds hetzelfde type databank.
 - Gebruik een package om seed data te genereren, bv. <https://www.npmjs.com/package/faker>.
 
-Laatste aanpassing op 09/10/2025 16:04
+Laatste aanpassing op 25/10/2025 15:50
