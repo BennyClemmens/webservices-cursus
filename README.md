@@ -1,6 +1,6 @@
 # Web Services - cursus
 
-This git repo was created following the OLOD Web Services @ HoGent in 2024-2025. The source for the slides was found [on github](https://hogent-frontendweb.github.io/webservices-cursus/#/). The structure and content was copy-pasted from the original notes.
+This git repo was created following the OLOD Web Services @ HoGent in 2024-2025. The source for the slides was found [on github](https://hogent-frontendweb.github.io/webservices-cursus/#/). The structure and content was copy-pasted from the original notes. Recently, the source of the course became [available](https://github.com/HOGENT-frontendweb/webservices-cursus/) too.
 
 I took the course again in 2025-2026. Since Koa was replaced with NestJS there are major changes, so there will be two versions below.
 
@@ -32,3 +32,4 @@ I took the course again in 2025-2026. Since Koa was replaced with NestJS there a
 3. [REST API intro](2025/003_rest_api_bouwen.md)
 4. [Datalaag en places](2025/004_datalaag_en_places.md)
 5. [Relaties](2025/005_relaties.md)
+6. [Validatie](2025/006_validatie.md)
