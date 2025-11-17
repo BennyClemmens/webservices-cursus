@@ -33,3 +33,4 @@ I took the course again in 2025-2026. Since Koa was replaced with NestJS there a
 4. [Datalaag en places](2025/004_datalaag_en_places.md)
 5. [Relaties](2025/005_relaties.md)
 6. [Validatie](2025/006_validatie.md)
+7. [Authenticatie en autorisatie](2025/007_authenticatie_en_autorisatie.md)
