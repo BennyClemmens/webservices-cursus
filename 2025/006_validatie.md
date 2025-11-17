@@ -826,15 +826,14 @@ import type { NestMiddleware } from '@nestjs/common';
 import { Injectable, Logger } from '@nestjs/common';
 import type { Request, Response, NextFunction } from 'express';
 
-@Injectable() // 👈 1
+@Injectable() // 👈 👇 1
 export class LoggerMiddleware implements NestMiddleware {
-  // 👈 1
   private readonly logger = new Logger(LoggerMiddleware.name); // 👈 2
 
+  // 👇 3
   use(req: Request, res: Response, next: NextFunction) {
-    // 👈 3
+    // 👇 4
     res.on('finish', () => {
-      // 👈 4
       // 👇 5
       const statusCode = res.statusCode;
 
@@ -875,14 +874,14 @@ import { LoggerMiddleware } from './lib/logger.middleware';
 
 // ...
 export class AppModule implements NestModule {
+  // 👇 1
   configure(consumer: MiddlewareConsumer) {
-    // 👈 1
     consumer.apply(LoggerMiddleware).forRoutes('*path'); // 👈 2
   }
 }
 ```
 
-1. `configure()`: Deze methode wordt automatisch aangeroepen door NestJS om middlewares te configureren
+1. `configure()`: Deze methode wordt automatisch aangeroepen door NestJS om middlewares te configureren tijdens initialisatie van de module.
 2. `consumer.apply(LoggerMiddleware)`: Registreert de `LoggerMiddleware` bij de DI container.
    - `forRoutes('*path')`: Zorgt ervoor dat de `LoggerMiddleware` wordt uitgevoerd voor alle routes in je applicatie (de wildcard \* matcht alle paden)
 
@@ -911,4 +910,4 @@ Voeg volgende functionaliteiten toe aan je eigen project:
 > pnpm start:dev
 > ```
 
-Laatste aanpassing op 31/10/2025 17:37
+Laatste aanpassing op 13/11/2025 14:40
