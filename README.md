@@ -23,6 +23,7 @@ I took the course again in 2025-2026. Since Koa was replaced with NestJS there a
 
 ## Content 2025-2026
 
+- [Intro](2025/00_intro.md)
 - [Algemene info](2025/01_algemene_info.md)
 - [Software](2025/02_software.md)
 - [Examenopdracht](2025/03_examenopdracht.md)

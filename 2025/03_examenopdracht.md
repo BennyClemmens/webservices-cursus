@@ -123,7 +123,7 @@ Naast het dossier dien je ook een demo van jouw applicatie op te nemen en te del
   - **Context van de applicatie**: leg uit wat de applicatie doet, wat het doel is en waarom je dit onderwerp gekozen hebt
   - **Projectstructuur overlopen (optioneel)**:
     - Leg eventuele speciale ontwerpkeuzes uit (waarom bepaalde mappen/bestanden georganiseerd zijn zoals ze zijn)
-  - Dit hoef je niet te doen als de projectstructuur identiek is aan de voorbeeldapplicatie
+    - Dit hoef je niet te doen als de projectstructuur identiek is aan de voorbeeldapplicatie
   - **Demo van de applicatie**:
     - Gebruik uitsluitend de online versie van je applicatie (geen localhost)
     - Indien je zowel Web Services als Front-end Web Development volgt:
@@ -194,4 +194,4 @@ Alle code zal voor de start van het volgend academiejaar verwijderd worden uit d
 
 Veel succes!
 
-Laatste aanpassing op 06/10/2025 17:22
+Laatste aanpassing op 03/03/2026 16:08 (commit 6c83a01 2025/09/21)

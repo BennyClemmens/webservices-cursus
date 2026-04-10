@@ -8,15 +8,15 @@
 
 ## Situering
 
-Dit olod behoort tot de keuzepakketten **Development** en **AI & Data Engineer**, zoals je hieronder kan zien:
+Dit olod behoort tot de keuzepakketten `Development` en `AI & Data Engineer`, zoals je hieronder kan zien:
 
 <!-- markdownlint-disable -->
 <p align="center">
-  <img src="img/1_MT_olods.png" style="width:50%;">
+  <img src="img/1_MT_olods.png" alt="Dit olod in de keuzepakketten" style="width:50%;">
 </p>
 <!-- markdownlint-enable -->
 
-Indien je in het keuzepakket **Development** zit, dan volg je waarschijnlijk Front-end Web Development gelijktijdig met dit olod. Indien je in het keuzepakket **AI & Data Engineer** zit, dan volg je enkel dit olod.
+Indien je in het keuzepakket `Development` zit, dan volg je waarschijnlijk Front-end Web Development gelijktijdig met dit olod. Indien je in het keuzepakket `AI & Data Engineer` zit, dan volg je enkel dit olod.
 
 ## Wat gaan we doen?
 
@@ -35,6 +35,7 @@ De Chamilo-cursus voor dit olod zal weinig bevatten. Hierin komen enkel de belan
 ### Deadline
 
 > Week 13: vrijdag 19 december 2025 om 23u59
+> Deadline tweede zit: TODO
 
 Je weet de deadline, plan je werk goed in! Wacht niet tot de laatste paar weken om te starten, dan zal je gegarandeerd in tijdsnood komen. Tijdens de lessen is ook voldoende tijd om aan de applicatie te werken, maak hier gebruik van!
 
@@ -66,20 +67,20 @@ Vanaf dit academiejaar worden de voorbeeldapplicatie en cursus van dit olod stel
 
 Deze planning is een richtlijn en kan nog wijzigen in functie van verlofdagen.
 
-| Week     | Inhoud                                           |
-|----------|--------------------------------------------------|
-| week 1   | Inleiding, TypeScript                            |
-| week 2   | TypeScript, REST API intro                       |
-| week 3   | REST API intro + bouwen                          |
-| week 4   | REST API bouwen                                  |
-| week 5   | Datalaag en places                               |
-| week 6   | Relaties                                         |
-| week 7   | Validatie en foutafhandeling                     |
-| week 8   | Authenticatie / autorisatie                      |
-| week 9   | Testen                                           |
-| week 10  | API documentatie                                 |
-| week 11  | CI/CD (= online zetten)                          |
-| week 12  | (geen nieuwe theorie, aan de opdracht werken)    |
+| Week    | Inhoud                                         |
+| ------- | ---------------------------------------------- |
+| week 1  | Inleiding, TypeScript                          |
+| week 2  | TypeScript, REST API intro                     |
+| week 3  | REST API intro + bouwen                        |
+| week 4  | REST API bouwen                                |
+| week 5  | Datalaag en places                             |
+| week 6  | Relaties                                       |
+| week 7  | Validatie en foutafhandeling                   |
+| week 8  | Authenticatie / autorisatie                    |
+| week 9  | Authenticatie / autorisatie + API documentatie |
+| week 10 | Testen                                         |
+| week 11 | CI/CD (= online zetten)                        |
+| week 12 | (geen nieuwe theorie, aan de opdracht werken)  |
 
 ## Help, ik zit vast?
 
@@ -95,7 +96,7 @@ Als dat niets oplevert, kan je op twee manieren hulp krijgen:
 **Buiten de les:**
 
 - Maak een GitHub issue aan in jouw repository
-  - Let op: dit is niet een bestand in de map `.github/ISSUE_TEMPLATE` aanpassen, deze laat je gewoon staan!
+  - **Let op:** dit is niet een bestand in de map `.github/ISSUE_TEMPLATE` aanpassen, deze laat je gewoon staan!
   - Meer info over het aanmaken van een GitHub issue: <https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue>
   - Koppel jouw lector aan het issue als assignee
   - Gebruik het voorziene template dat automatisch wordt geladen
@@ -130,4 +131,4 @@ Als dat niets oplevert, kan je op twee manieren hulp krijgen:
 - Je moet kunnen aantonen dat je de gebruikte technologieën begrijpt
 - AI-hulp vermelden in je dossier wordt gewaardeerd maar is niet verplicht
 
-Laatste aanpassing op 06/10/2025 17:22
+Laatste aanpassing op 03/03/2026 16:08 (commit 089cde8 2025/11/07)
