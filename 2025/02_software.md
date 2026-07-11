@@ -1,6 +1,6 @@
 # [^](../README.md) Software
 
-Voor dit olod gaan we ervan uit dat je onderstaande **software installeert en configureert voor de eerste les**. Tijdens de les wordt geen tijd voorzien om dit te doen, dus zorg ervoor dat je dit op voorhand in orde brengt. Indien je problemen ondervindt, kan je deze melden via een issue op je eigen repository.
+Voor dit OLOD gaan we ervan uit dat je onderstaande **software installeert en configureert vóór de eerste les**. Tijdens de les wordt geen tijd voorzien om dit te doen, dus zorg ervoor dat je dit op voorhand in orde brengt. Indien je problemen ondervindt, kan je deze melden via een issue op je eigen repository.
 
 - Git ✅
 - Node.js ✅
@@ -46,7 +46,7 @@ Volg vervolgens de [GitHub Guide](https://docs.github.com/en/authentication/conn
 
 ## Node.js
 
-Installeer Node.js (**minimaal versie 22.x.x) via een package manager:
+Installeer Node.js (**minimaal versie 22.x.x**) via een package manager:
 
 - Windows: `winget install -e --id OpenJS.NodeJS.LTS`
 - macOS: `brew install node@22`
@@ -68,13 +68,14 @@ Installeer `pnpm` als alternatieve package manager voor `npm`:
 ```bash
 npm install -g pnpm@latest-10
 ```
+
 Laat `pnpm` vervolgens de nodige zaken instellen:
 
 ```bash
 pnpm setup
 ```
 
-Windows-gebruikers kunnen een fout krijgen bij het uitvoeren van dit commando. De fout is in de vorm van `... cannot be loaded because running scripts is disabled on this system`. Indien dit het geval is, open een PowerShell terminal in Administrator modus. Voer vervolgens het volgende commando uit en antwoord met `A` op de vraag:
+Windows-gebruikers kunnen een fout krijgen bij het uitvoeren van dit commando. De fout heeft de vorm van `... cannot be loaded because running scripts is disabled on this system`. Indien dit het geval is, open een PowerShell terminal in Administrator-modus. Voer vervolgens het volgende commando uit en antwoord met `A` op de vraag:
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
@@ -128,7 +129,6 @@ Een aantal optionele, maar toch handige plugins:
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) ✅
 - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) ✅
 - [Markdown lint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) ✅
-- [vscode-twoslash-queries](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-twoslash-queries) ✅
 
 #### Configuratie VS Code
 
@@ -136,7 +136,7 @@ Voeg onderstaande configuratie toe aan de instellingen van Visual Studio Code. D
 
 - Open de zoekfunctie via de toets `F1`
 - Zoek op "settings" en kies voor `Preferences: Open User Settings (JSON)`
-- Kopieer onderstaande JSON-code en voeg toe aan het JSON-bestand dat geopend werd. Zorg ervoor dat je een geldig JSON-object maakt!
+- Kopieer uit onderstaande JSON-code enkel de properties en voeg deze toe aan het JSON-bestand dat geopend werd. Zorg ervoor dat je een geldig JSON-object maakt!
 
 > **Opmerking**: de laatste setting schakelt de "Trusted workspaces" uit. Indien je dit niet wenst, verwijder deze setting.
 
@@ -163,7 +163,7 @@ Voeg onderstaande configuratie toe aan de instellingen van Visual Studio Code. D
 }
 ```
 
-Een thema kan je uiteraard zelf kiezen, maar [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) is wel een overzichtelijk thema.
+Een thema kan je uiteraard zelf kiezen, maar [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) is een overzichtelijk thema.
 
 ### Fira Code lettertype
 
@@ -173,7 +173,7 @@ Installeer het lettertype via een package manager:
 
 - Windows: `choco install firacode`
   - Winget is nog niet beschikbaar voor Fira Code, manuele installatie is ook mogelijk: <https://github.com/tonsky/FiraCode/wiki/Installing#windows>
-- macOS: **brew install firacode**
+- macOS: `brew install firacode`
 - Linux: [distro afhankelijk](https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager)
 
 Of volg de instructies op de [GitHub van Fira Code](https://github.com/tonsky/FiraCode/wiki/Installing).
@@ -197,7 +197,7 @@ Installeer Postman via een package manager:
 - macOS: `brew install --cask postman`
 - Linux: [distro afhankelijk](https://www.postman.com/downloads/)
 
-Open Postman en maak een account aan. Je kan er natuurlijk ook voor kiezen om eenvoudigweg met Google aan te melden.
+Open Postman en maak een account aan. Je kan er natuurlijk ook voor kiezen om eenvoudig met Google aan te melden.
 
 ## Docker
 

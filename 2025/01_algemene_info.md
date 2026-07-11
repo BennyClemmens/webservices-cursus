@@ -12,7 +12,7 @@ Dit olod behoort tot de keuzepakketten `Development` en `AI & Data Engineer`, zo
 
 <!-- markdownlint-disable -->
 <p align="center">
-  <img src="img/1_MT_olods.png" alt="Dit olod in de keuzepakketten" style="width:50%;">
+  <img src="img/1_MT_olods.png" alt="Dit olod in de keuzepakketten" style="width:70%;">
 </p>
 <!-- markdownlint-enable -->
 
@@ -35,7 +35,7 @@ De Chamilo-cursus voor dit olod zal weinig bevatten. Hierin komen enkel de belan
 ### Deadline
 
 > Week 13: vrijdag 19 december 2025 om 23u59
-> Deadline tweede zit: TODO
+> Deadline tweede zit: zondag 16 augustus 2026 om 23u59
 
 Je weet de deadline, plan je werk goed in! Wacht niet tot de laatste paar weken om te starten, dan zal je gegarandeerd in tijdsnood komen. Tijdens de lessen is ook voldoende tijd om aan de applicatie te werken, maak hier gebruik van!
 
@@ -82,7 +82,7 @@ Deze planning is een richtlijn en kan nog wijzigen in functie van verlofdagen.
 | week 11 | CI/CD (= online zetten)                        |
 | week 12 | (geen nieuwe theorie, aan de opdracht werken)  |
 
-## Help, ik zit vast?
+## Help, ik zit vast!
 
 Heb je vragen over de opdracht of loop je vast tijdens de ontwikkeling? Lees de foutboodschappen, copy-paste ze in Google (of een AI tool). Vaak 'helpen' we studenten door de fout te copy-pasten en de eerste link in Google te kopiëren.
 
@@ -98,12 +98,12 @@ Als dat niets oplevert, kan je op twee manieren hulp krijgen:
 - Maak een GitHub issue aan in jouw repository
   - **Let op:** dit is niet een bestand in de map `.github/ISSUE_TEMPLATE` aanpassen, deze laat je gewoon staan!
   - Meer info over het aanmaken van een GitHub issue: <https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue>
-  - Koppel jouw lector aan het issue als assignee
-  - Gebruik het voorziene template dat automatisch wordt geladen
-  - Geef voldoende context en details over je probleem
-  - Om elke student evenveel te kunnen helpen, mag je maximaal 3 issues openen
+- Koppel jouw lector aan het issue als assignee
+- Gebruik het voorziene template dat automatisch wordt geladen
+- Geef voldoende context en details over je probleem
+- Om elke student evenveel te kunnen helpen, mag je maximaal 3 issues openen
 
-**Belangrijk**: Technische vragen via e-mail worden niet beantwoord. Gebruik altijd de bovenstaande kanalen voor de beste en snelste hulp.
+**Belangrijk:** Technische vragen via e-mail worden niet beantwoord. Gebruik altijd de bovenstaande kanalen voor de beste en snelste hulp.
 
 ## Mag ik AI gebruiken?
 
@@ -131,4 +131,4 @@ Als dat niets oplevert, kan je op twee manieren hulp krijgen:
 - Je moet kunnen aantonen dat je de gebruikte technologieën begrijpt
 - AI-hulp vermelden in je dossier wordt gewaardeerd maar is niet verplicht
 
-Laatste aanpassing op 03/03/2026 16:08 (commit 089cde8 2025/11/07)
+Laatste aanpassing op 29/06/2026 10:13 (commit 089cde8 2025/11/07)

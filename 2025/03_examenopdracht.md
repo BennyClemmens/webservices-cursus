@@ -6,7 +6,7 @@
 - [panopto](https://hogent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4f4bc39e-7805-4b79-ab49-b36000cffef3&start=0)
 - `D:/DATA/Videos/WEBSERVICES/2025/H01.mp4`
 
-## De opdracht
+## 1. De opdracht
 
 Gedurende het semester maak je een API in Node.js. Als je ook het olod Front-end Web Development volgt, zal de API dienen als back-end voor de applicatie die je daar maakt. Indien je het olod Front-end Web Development niet volgt, maak je gewoon een API.
 
@@ -14,15 +14,15 @@ Je bent volledig vrij om te kiezen welke API je ontwikkelt. Indien je twijfelt o
 
 > Er wordt enkel feedback gegeven op ideeën tijdens semester 1. Indien je een idee hebt dat je graag wil bespreken, doe dit dan tijdig
 
-Voor de examenopdracht mag je optioneel per 2 samenwerken. Zie [verder](#groepswerk-optioneel) voor meer informatie.
+Voor de examenopdracht mag je optioneel per 2 samenwerken. Zie [sectie 7](#7-groepswerk-optioneel) voor meer informatie.
 
 Alle code moet in een GitHub classroom repository terechtkomen (zie Chamilo voor een link naar de classroom). Enkel de `main` branch van deze repository zal geëvalueerd worden. Er wordt automatisch een template van de `README.md` aangemaakt als je de opdracht accepteert, vul deze correct in. Je gebruikt dezelfde repository voor zowel Web Services als Front-end Web Development.
 
 Het is belangrijk dat de applicatie significant verschilt van de voorbeeldapplicatie die tijdens de les gemaakt wordt.
 
-Daarnaast verwachten we dat je een dossier met uitleg over je app indient op Chamilo. Een template voor dit dossier (`dossier.md`) wordt ook aangeleverd als je de opdracht accepteert en dien je te gebruiken. **Je dient het dossier in als pdf!**
+Daarnaast verwachten we dat je een dossier met uitleg over je app indient op Chamilo. Een template voor dit dossier (`dossier.md`) vind je ook in jouw repository en dien je te gebruiken. **Je dient het dossier in als pdf!**
 
-## Ontvankelijkheidscriteria
+## 2. Ontvankelijkheidscriteria
 
 Alvorens we jouw project evalueren, controleren we of het voldoet aan een aantal ontvankelijkheidscriteria.
 
@@ -30,7 +30,7 @@ Alvorens we jouw project evalueren, controleren we of het voldoet aan een aantal
 
 Deze criteria zijn:
 
-- Het dossier is volledig en tijdig ingediend (zie [verder](#dossier-vereisten) voor de vereisten)
+- Het dossier is volledig en tijdig ingediend (zie [verder](#4-dossier-vereisten) voor de vereisten)
 - Er werden voldoende (kleine) commits gemaakt
   - Als je per 2 werkt, moeten we een aantal pull requests met feedback zien
 - De demo duurt niet langer dan 15 minuten (incl. Front-end Web Development indien van toepassing)
@@ -39,12 +39,12 @@ Deze criteria zijn:
 - De applicatie start zonder problemen op a.d.h.v. de instructies in de README en gebruikt hiervoor Docker
 - De applicatie wijkt voldoende af van de voorbeeldapplicatie
 - node_modules, .env, productiecredentials... werden niet gepushed op GitHub
-- Er is een extra technologie gebruikt (zie [verder](#voorbeelden-van-extras) voor voorbeelden)
+- Er is een extra technologie gebruikt (zie [verder](#6-voorbeelden-van-extras) voor voorbeelden)
 - Er werden een aantal niet-triviale en werkende integratietesten gemaakt (naast de testen voor user)
 - Het databankschema is voldoende complex en correct. Het bestaat uit minstens 3 tabellen (naast de user tabel) die verbonden zijn met elkaar en bevat minstens 1 veel-op-veel relatie. De tabellen bevatten meerdere kolommen (naast het id).
 - Er is degelijke autorisatie/authenticatie op alle routes.
 
-## Evaluatiecriteria
+## 3. Evaluatiecriteria
 
 Jouw project wordt beoordeeld op verschillende onderdelen en criteria, met elk hun eigen gewicht. Op Chamilo vind je de evaluatiekaart met alle onderdelen/criteria en hun gewicht. Hieronder vind je een overzicht van de criteria per onderdeel.
 
@@ -100,7 +100,7 @@ Jouw project wordt beoordeeld op verschillende onderdelen en criteria, met elk h
 - alle testen slagen
 - de student toont een stukje code waar die fier op is
 
-## Dossier vereisten
+## 4. Dossier vereisten
 
 Zorg dat de `dossier.md` van je repository aangevuld is, alle vereisten staan in het document.
 
@@ -110,7 +110,7 @@ Dien enkel een pdf in op Chamilo, er zijn genoeg plugins voor VS Code om Markdow
 
 > ⚠️ Gebruik een degelijke opmaak in Markdown voor de README en het dossier! Zie [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) voor meer uitleg.
 
-## Demo vereisten
+## 5. Demo vereisten
 
 Naast het dossier dien je ook een demo van jouw applicatie op te nemen en te delen via Panopto met jouw lector(en). Deze demo moet voldoen aan de volgende vereisten:
 
@@ -146,7 +146,7 @@ Naast het dossier dien je ook een demo van jouw applicatie op te nemen en te del
     - Leg uit waarom je dit goed vindt en wat het doet
     - Dit geldt voor beide olods (Web Services en Front-end Web Development indien van toepassing)
 
-## Voorbeelden van extra’s
+## 6. Voorbeelden van extra’s
 
 Je vindt misschien wel een interessante extra technologie in de [Node.js Toolbox](https://nodejstoolbox.com/). Een aantal veelgebruikte extra's zijn:
 
@@ -163,7 +163,7 @@ Bij het toevoegen van een extra technologie is het belangrijk dat deze ook echt 
 
 > Jouw project moet gebruik maken van NestJS als web framework. Andere frameworks zijn niet toegelaten.
 
-## Groepswerk (optioneel)
+## 7. Groepswerk (optioneel)
 
 In het geval je voor de examenopdracht per 2 wil samenwerken, kan dit. Je maakt in dat geval één repository aan in de GitHub classroom en werkt samen aan dezelfde codebase. Volg de instructies op Chamilo voor het aanmaken van een repository.
 
@@ -177,7 +177,7 @@ Na de deadline bekijken we de activiteit in de repository en kunnen we zien wie 
 
 Voor de demo neem je best samen een video op. Jullie verdelen zelf wie wat demonstreert, maar zorg ervoor dat beide personen evenveel aan bod komen in de video.
 
-## Evaluatie
+## 8. Evaluatie
 
 Je wordt beoordeeld op basis van een portfolio dat je samenstelt gedurende het semester. Dit portfolio bestaat uit:
 
@@ -188,7 +188,7 @@ Je wordt beoordeeld op basis van een portfolio dat je samenstelt gedurende het s
 
 Zorg ervoor dat jouw applicatie aan alle ontvankelijkheidscriteria voldoet op het moment van de deadline. Indien dit niet het geval is, krijg je een score 'AFWEZIG".
 
-**De deadline voor het portfolio is het einde van week 13 (vrijdag 19 december 2025, 23u59).**
+**De deadline voor het portfolio is het einde van week 13 (vrijdag 19 december 2025, 23u59). Voor EP3 is dit zondag 16 augustus 2026, 23u59**
 
 Alle code zal voor de start van het volgend academiejaar verwijderd worden uit de GitHub classroom. Als je je applicatie wenst te behouden, zorg dan dat je deze tijdig naar een privé repository pusht.
 

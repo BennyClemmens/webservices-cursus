@@ -20,7 +20,7 @@ Laten we eens vragen aan ChatGPT wat TypeScript is:
 
 TypeScript is heel simpel gezegd: "JavaScript met types". Het is een superset van JavaScript, wat wil zeggen dat elke JavaScript code ook TypeScript code is. TypeScript voegt enkel types toe aan JavaScript. Onderstaande functie is dus perfect geldige TypeScript code:
 
-```js
+```typescript
 function add(a, b) {
   return a + b;
 }
@@ -30,7 +30,7 @@ Types geef je aan door na de naam van de variabele een dubbele punt te zetten, g
 
 Met types wordt dit dus:
 
-```ts
+```typescript
 function add(a: number, b: number): number {
   return a + b;
 }
@@ -38,7 +38,7 @@ function add(a: number, b: number): number {
 
 Deze types worden enkel gebruikt tijdens het schrijven van de code en worden verwijderd tijdens het uitvoeren van de code. TypeScript moet vertaald worden naar JavaScript om uitgevoerd te kunnen worden, dit wordt **transpiling** genoemd.
 
-TypeScript is ontwikkeld door Microsoft en is open-source. Het is een populaire taal in de wereld van web development (zie <https://2023.stateofjs.com/en-US/usage/#js_ts_balance>). TypeScript wordt tegenwoordig meer gebruikt dan pure JavaScript omwille van de types, ES6+ features en soms OO features (als je hiervan houdt). Natuurlijk maakt TypeScript code soms complexer en langer, maar dit weegt niet op tegen de voordelen.
+TypeScript is ontwikkeld door Microsoft en is open-source. Het is een populaire taal in de wereld van web development (zie <https://2024.stateofjs.com/en-US/usage/#js_ts_balance>). TypeScript wordt tegenwoordig meer gebruikt dan pure JavaScript omwille van de types, ES6+ features en soms OO features (als je hiervan houdt). Natuurlijk maakt TypeScript code soms complexer en langer, maar dit weegt niet op tegen de voordelen.
 
 Het vervolg van dit hoofdstuk zal bestaan uit een herhaling van JavaScript en een introductie tot TypeScript. We zullen de belangrijkste basisconcepten en -mogelijkheden van TypeScript overlopen. Daarnaast zullen we ook enkele belangrijke concepten van functioneel programmeren in JavaScript/TypeScript overlopen.
 
@@ -53,16 +53,17 @@ TypeScript kent een aantal basistypes:
 - `boolean`
 - `null`
 - `undefined`
-- `...`
+- ...
 
-En enkele speciale:
+Met enkel speciale:
 
 - `void`: geeft niets terug (`null` of `undefined` zijn dan wel weer mogelijk)
 - `any`: eender welke waarde, van eender welk type (niet aanbevolen)
 - `never`: geeft nooit iets terug
   - bij `void` kan je nog `return;` doen, bij `never` niet
+  - dit kan je bv. gebruiken voor functies die iets controleren en een fout gooien als iets niet klopt
 
-```ts
+```typescript
 function testVreemd(): void {
   return;
 }
@@ -81,7 +82,7 @@ Er zijn ook enkele types voor de OO-mensen onder ons:
 
 `interface` en `type` zijn het meest nuttig om te onthouden. Ze lijken op elkaar, maar hebben enkele verschillen: <https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example#useful-table-for-types-vs-interfaces>
 
-Een goeie regel is: gebruik een interface tot je een type nodig hebt (bron: [orta](https://x.com/orta/status/1356129195835973632?s=20))
+Een goeie regel is: gebruik een `interface` tot je een `type` nodig hebt (bron: [orta](https://x.com/orta/status/1356129195835973632?s=20))
 
 ### Voorbeeld van een interface
 
@@ -91,7 +92,7 @@ Dit zouden we zowel als interface als type kunnen maken, zoals te zien is in het
 
 Hierbij zien we dat de ronde haakjes aangeven dat a en b de parameters zijn van het type `number`. De functie zelf zal dan een `number` teruggeven.
 
-```ts
+```typescript
 interface BinaryOperationInterface {
   (a: number, b: number): number;
 }
@@ -101,7 +102,7 @@ type BinaryOperationType = (a: number, b: number) => number;
 
 Deze kunnen we vervolgens gebruiken om functies te definiëren. Let op, wanneer we gebruik maken van het keyword `function`, moeten we nog steeds de parameters en het return type opgeven.
 
-```ts
+```typescript
 function sum(a: number, b: number): number {
   return a + b;
 }
@@ -109,7 +110,7 @@ function sum(a: number, b: number): number {
 
 Wanneer we nu deze functie als een variabele willen gebruiken, dan kunnen we wel het volledige nut van de interface of het type gebruiken. Hierbij beschrijven we dus wat het type van de variabele is, waarbij we ons gedefinieerd type/interface gebruiken. Vervolgens zetten we het "="-teken, waarbij we de parameters nogmaals moeten herhalen, en de implementatie van de functie volgt. Hierdoor zal typescript afdwingen dat we dezelfde parameters en return type gebruiken als in de interface/type.
 
-```ts
+```typescript
 const sum: BinaryOperationInterface = (a: number, b: number) => {
   return a + b;
 };
@@ -119,13 +120,13 @@ const sum: BinaryOperationInterface = (a: number, b: number) => {
 
 Stel dat we nu zouden willen zorgen dat we eenvoudig reeksen van getallen kunnen vermenigvuldigen, zodat we bijvoorbeeld de tafel van twee, of de tafel van drie, kunnen berekenen. Daarvoor willen we een vermenigvuldig-functie maken, waarbij we moeten zeggen dat we een getal willen vermenigvuldigen met een andere getal, maar we willen niet telkens de 2 (of 3) opnieuw moeten opgeven. Hiervoor willen we dus een functie, die een andere functie teruggeeft. Het onderstaande voorbeeld heeft dus als beschrijving dat we een functie hebben met één parameter (waarbij wij dus willen opgeven dat we willen vermenigvuldigen met 2), en een andere functie als return type, zodat we kunnen meegeven waarmee we willen vermenigvuldigen.
 
-```ts
+```typescript
 type MultiplyFunction = (a: number) => (b: number) => number;
 ```
 
 Dit kunnen we dan als volgt gebruiken om de tafel van twee te berekenen:
 
-```ts
+```typescript
 const multiply: MultiplyFunction = (a: number) => (b: number) => {
   return a * b;
 };
@@ -215,7 +216,7 @@ In getValueWithLet: 5
 
 Het is niet altijd verplicht om elke variabele, functie... te voorzien van een type. TypeScript is slim genoeg om het type af te leiden uit de context, dit heet **type inference**. Met het keyword `typeof` kan je het type van een variabele opvragen, maar dat geeft niet altijd nuttige info (zie variabele `f` hieronder).
 
-```ts
+```typescript
 let a = 1;
 let b = 'hello';
 let c = true;
@@ -248,7 +249,7 @@ Type of g.a: number
 
 Een andere waarde toekennen aan een variabele is ook een vorm van type inference. TypeScript laat hierbij niet toe dat je een waarde toekent die niet overeenkomt met het type van de variabele. Afhankelijk van de instellingen van de compiler zal dit een fout of een waarschuwing geven.
 
-```ts
+```typescript
 a = 'test';
 
 console.log('Type of a:', typeof a); // string
@@ -256,7 +257,7 @@ console.log('Type of a:', typeof a); // string
 
 Je zou ook types kunnen toekennen aan de variabelen door gebruik te maken van de `:` operator. Dit is niet verplicht, maar kan wel handig zijn om de code leesbaarder te maken.
 
-```ts
+```typescript
 let getal: number = 1;
 let tekst: string = 'hello';
 // ...
@@ -264,7 +265,7 @@ let tekst: string = 'hello';
 
 Het is wel mogelijk om een variable meerdere types te laten aannemen. Dit kan door een `|` te gebruiken tussen de types.
 
-```ts
+```typescript
 let getalOfTekst: number | string = 1;
 
 // en dan later:
@@ -273,7 +274,7 @@ getalOfTekst = 'hello';
 
 Je kan het zelfs nog wat complexer maken:
 
-```ts
+```typescript
 let x = [1, 'hello', null];
 // het type van x is (number | string | null)[]
 ```
@@ -282,7 +283,7 @@ In de documentatie van TypeScript kan je ook lezen dat type inference in de omge
 
 Je kan ook gedetailleerde types maken voor bijvoorbeeld objecten. Dit kan door gebruik te maken van de `{}` operator. Je kan hiervoor ook een **type alias** maken door gebruik te maken van het `type` keyword.
 
-```ts
+```typescript
 const obj1: { a: number; b: string } = { a: 1, b: 'hello' };
 
 // of
@@ -296,7 +297,7 @@ Er zijn ook programmeurs die meer houden van een OO-aanpak. Daarvoor voorziet Ty
 - `interface`: om een interface te maken
 - `enum`: om een enum te maken
 
-```ts
+```typescript
 enum Kleur {
   Rood,
   Groen,
@@ -334,7 +335,7 @@ Literals zijn een speciaal type in typescript. Hierbij kunnen we omschrijven dat
 
 Ditzelfde voorbeeld wordt verderop opnieuw gebruikt om aan te geven dat een status ofwel aan het laden, ofwel mislukt, ofwel succesvol is. In dit voorbeeld tonen we aan dat bij het type `NetworkLoadingState` de waarde van het veld `state` altijd `loading` is.
 
-```ts
+```typescript
 type NetworkLoadingState = {
   state: 'loading';
 };
@@ -356,13 +357,13 @@ type NetworkSuccessState = {
 
 In de bovenstaande voorbeelden hebben we gezien dat we een array kunnen typeren met de volgende syntax:
 
-```ts
+```typescript
 type GetallenArray = number[];
 ```
 
 In typescript is er echter ook een specifiek type voor arrays:
 
-```ts
+```typescript
 type GetallenArray = Array<number>;
 ```
 
@@ -378,7 +379,7 @@ Uiteraard zijn er meer dan alleen de basis types die we in de vorige sectie hebb
 
 Om types te combineren moet je gebruik maken van de `&` operator, dit heet **intersection types**. De types worden hierbij samengevoegd tot één type. Het is hierbij verplicht dat variabelen van dit type aan alle types voldoen, m.a.w. het moet alle properties uit de types bevatten.
 
-```ts
+```typescript
 type Book = {
   title: string;
   author: string;
@@ -396,7 +397,7 @@ const book: BookExtension = {
 
 Je kan ook types combineren met de `|` operator, dit heet **union types**. De types worden hierbij niet samengevoegd, het is ofwel het ene ofwel het andere type, ofwel een combinatie van beide. Het is dus niet verplicht om aan alle types te voldoen.
 
-```ts
+```typescript
 type Member = {
   name: string;
   age: number;
@@ -424,7 +425,7 @@ const member3: MemberExtension = {
 
 Zet je de union operator helemaal vooraan het type, dan moet het één van de types zijn, maar niet alle types. Dit heet **discriminated unions**.
 
-```bash
+```typescript
 type NetworkLoadingState = {
   state: 'loading';
 };
@@ -459,7 +460,7 @@ TypeScript heeft ook heel wat [utility types](https://www.typescriptlang.org/doc
 - `Pick<Type, Keys>`: haalt een of meerdere properties (`Keys`) op uit een type (`Type`)
 - `...`
 
-```ts
+```typescript
 type MyExample = {
   a: number;
   b: string;
@@ -491,7 +492,7 @@ De spread operator (`...`) is een operator die je toelaat om een expressie uit t
 
 Laten we een voorbeeld voor arrays bekijken. Let hierbij op de types, deze zijn optioneel (omdat deze via type inference gekend zijn), maar zijn in dit voorbeeld bijgevoegd ter verduidelijking:
 
-```js
+```typescript
 const myArray: Array<number> = [1, 2, 3, 4, 5];
 const myArray2: Array<number> = [6, 7, 8, 9, 10];
 
@@ -513,7 +514,7 @@ console.log(theArray2);
 
 Met objecten kunnen we ook gebruik maken van de spread operator:
 
-```js
+```typescript
 type NameAndAge = {
   name: string;
   age: number;
@@ -559,7 +560,7 @@ Object {myObject: Object {name: "John", age: 42}, myObject2: Object {birthday: "
 
 De spread operator kan ook handig zijn om argumenten door te geven aan een functie:
 
-```js
+```typescript
 const numbers = [1, 2, 3];
 const multiply = (a, b, c) => {
   return a * b * c;
@@ -582,7 +583,7 @@ Destructuring is een techniek die je toelaat om een object of array te ontleden 
 
 Laten we een voorbeeld bekijken:
 
-```js
+```typescript
 const address = {
   city: 'gent',
   street: 'coupure',
@@ -617,7 +618,7 @@ console.log(addressWithoutCity);
 
 ## Asynchrone code
 
-JavaScript is een single-threaded taal (je kan wel threads maken m.b.v. [worker threads](https://nodejs.org/api/worker_threads.html)). Dit wil zeggen dat er maar één thread is die de code uitvoert. Dit is een groot verschil met bv. Java, waar je meerdere threads kan hebben die parallel uitgevoerd worden. Dit heeft als gevolg dat JavaScript code asynchroon moet uitgevoerd worden. Als je bv. een API call doet, dan moet je wachten op het resultaat. Als je dit synchroon zou doen, dan zou de hele applicatie blokkeren tot het resultaat van de API call terug is.
+JavaScript is een single-threaded taal (je kan wel threads maken m.b.v. [worker threads](https://nodejs.org/api/worker_threads.html)). Dit wil zeggen dat er maar één thread is die de code uitvoert. Dit is een groot verschil met bv. Java, waar je meerdere threads _kan_ hebben die parallel uitgevoerd worden. Dit heeft als gevolg dat JavaScript code asynchroon moet uitgevoerd worden. Als je bv. een API call doet, dan moet je wachten op het resultaat. Als je dit synchroon zou doen, dan zou de hele applicatie blokkeren tot het resultaat van de API call terug is.
 
 In JavaScript werd/wordt dit opgelost door een callback functie mee te geven aan de functie die de API call doet. De callback functie wordt dan uitgevoerd als het resultaat van de API call terug is.
 
@@ -629,7 +630,7 @@ Tegenwoordig wordt er meer en meer gebruik gemaakt van Promises. Een Promise is 
 
 Laten we een voorbeeld met callbacks bekijken:
 
-```js
+```typescript
 // stel we maken een functie die na een bepaalde tijd een callback functie uitvoert
 function waitFor(timeInMs, callback) {
   setTimeout(() => {
@@ -678,7 +679,7 @@ Properties ViewerPromiseProperties Viewer
 
 Je kan ook een Promise maken die een fout teruggeeft:
 
-```js
+```typescript
 function immediatelyFail(timeInMs) {
   return new Promise((resolve, reject) => {
     reject('Something went wrong!');
@@ -706,15 +707,15 @@ Properties ViewerPromiseProperties Viewer
 "Something went wrong!"
 ```
 
-Callbacks leiden vaak tot **callback hel**l: je moet een callback functie meegeven aan een functie die een callback functie verwacht, die op zijn beurt een callback functie verwacht... Daarom werden in de eerste plaats Promises geïntroduceerd en later ook async/await.
+Callbacks leiden vaak tot **callback hell**: je moet een callback functie meegeven aan een functie die een callback functie verwacht, die op zijn beurt een callback functie verwacht... Daarom werden in de eerste plaats Promises geïntroduceerd en later ook async/await.
 
-Async/await zijn keywords die toelaten om asynchrone code te schrijven die er synchroon uitziet. Je kan een functie als `async` markeren. Deze functie kan dan `await` gebruiken om te wachten op het resultaat van een Promise. Je kan ook een `try/catch` blok gebruiken om fouten op te vangen. Een `async` functie geeft **altijd** een `Promise` terug, ook al doe je geen expliciete `return`. Met async/await los je dus het probleem van callback hell op.
+Async/await zijn keywords die toelaten om asynchrone code te schrijven die er synchroon uitziet. Je kan een functie als `async` markeren. Deze functie kan dan `await` gebruiken om te wachten op het resultaat van een Promise. Je kan ook een `try`/`catch` blok gebruiken om fouten op te vangen. Een `async` functie geeft **altijd** een Promise terug, ook al doe je geen expliciete `return`. Met async/await los je dus het probleem van callback hell op.
 
 We raden dus aan om altijd async/await te gebruiken. Je kan nog steeds callbacks gebruiken, maar dit is niet meer nodig.
 
 Laten we een voorbeeld bekijken:
 
-```js
+```typescript
 // we maken een functie die een bepaalde REST API aanspreekt
 // deze functie geeft een Promise terug aangezien ze gebruik maakt van await
 async function getMeSomethingFunny() {
@@ -758,7 +759,7 @@ JavaScript heeft ook diverse kleine handigheidjes, we vullen deze lijst stelselm
 
 Bij het aanmaken van objecten moet je steeds `key: value` geven per attribuut in het object. Maar wat als de attributen (en de waarde) uit een variabele komen én de naam van het attribuut is gelijk aan de naam van de variabele? Dan kan je gebruik maken van een verkorte syntax:
 
-```js
+```typescript
 const name = 'John';
 const age = 42;
 
@@ -790,7 +791,7 @@ Object {name: "John", age: 42}
 
 ### Oefening 1 - Je eigen project
 
-Denk gedurende deze eerste les na over het onderwerp van de [examenopdracht](https://hogent-frontendweb.github.io/webservices-cursus/#/./0-intro/situering?id=wat-gaan-jullie-doen). De ervaring leert ons dat het enige tijd vergt om de leerstof van Web Services te verwerken en dat je tijdig moet beginnen aan de opdracht (maar dat is altijd, toch?).
+Denk gedurende deze eerste les na over het onderwerp van de [examenopdracht](./01_algemene_info.md#wat-gaan-jullie-doen). De ervaring leert ons dat het enige tijd vergt om de leerstof van Web Services te verwerken en dat je tijdig moet beginnen aan de opdracht (maar dat is altijd, toch?).
 
 Maak een nieuwe GitHub repository aan via de GitHub classroom link in de introductie van de Chamilo-cursus. Clone jouw GitHub repository uit de GitHub classroom:
 
@@ -815,7 +816,7 @@ git commit -m "✨ Initial commit ✨"
 git push
 ```
 
-Schrijf in het kort neer waarover de applicatie zal gaan, welke functionaliteiten er *mogelijks* in zullen zitten, welke entiteiten er zullen zijn, welke attributen deze zullen hebben... Je doet dit bij voorkeur in een Markdown-bestand (nee, we gebruiken Word niet meer hiervoor). Door in tekstvorm te werken, kan je dit bestand bijhouden in jouw eigen GitHub repository.
+Schrijf in het kort neer waarover de applicatie zal gaan, welke functionaliteiten er _mogelijks_ in zullen zitten, welke entiteiten er zullen zijn, welke attributen deze zullen hebben... Je doet dit bij voorkeur in een Markdown-bestand (nee, we gebruiken Word niet meer hiervoor). Door in tekstvorm te werken, kan je dit bestand bijhouden in jouw eigen GitHub repository.
 
 Vraag hulp/feedback aan je lector als je onzeker bent over je idee. Je kan dit doen tijdens de les of na de les via een issue op jouw GitHub repository (gebruik het template voor feedback).
 
@@ -829,7 +830,7 @@ Als je al ervaring hebt met TypeScript, kan je de oefeningen op deze website pro
 
 Vervolgens loont het de moeite om een aantal JavaScript drill-oefeningen te maken. Tijdens dit olod leer je heel wat nieuws in Node.js, we kunnen niet blijven stilstaan bij basis JavaScript-syntax en -functionaliteiten.
 
-Clone de repository <https://github.com/HOGENT-frontendweb/webservices-ch1-exercise> en lees de instructies in de README. De oplossingen zijn te vinden op de branch [solution](https://github.com/HOGENT-frontendweb/webservices-ch1-exercise/tree/solution).
+Clone de repository <https://github.com/HOGENT-frontendweb/webservices-ch1-exercise> en lees de instructies in de README. De oplossingen zijn te vinden op de branch [`solution`](https://github.com/HOGENT-frontendweb/webservices-ch1-exercise/tree/solution).
 
 ## Must read/watch
 
@@ -841,4 +842,4 @@ Clone de repository <https://github.com/HOGENT-frontendweb/webservices-ch1-exerc
 - [Re-implementing JavaScript's == in JavaScript](https://evanhahn.com/re-implementing-javascript-double-equals-in-javascript/)
   - Laat duidelijk zien waarom je `===` moet gebruiken i.p.v. `==`.
 
-Laatste aanpassing op 06/10/2025 17:22
+Laatste aanpassing op 06/10/2025 17:22 (commit 60c5002 2025 09 10)
