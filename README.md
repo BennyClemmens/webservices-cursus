@@ -2,7 +2,7 @@
 
 This git repo was created following the OLOD Web Services @ HoGent in 2024-2025. The source for the slides was found [on github](https://hogent-frontendweb.github.io/webservices-cursus/#/). The structure and content was copy-pasted from the original notes. Recently, the source of the course became [available](https://github.com/HOGENT-frontendweb/webservices-cursus/) too.
 
-I took the course again in 2025-2026. Since Koa was replaced with NestJS there are major changes, so there will be two versions below.
+I took the course again in 2025-2026 and 2026-2027. Since Koa was replaced with NestJS there are major changes, so there multiple versions below.
 
 ## Content 2024-2025
 
@@ -35,3 +35,11 @@ I took the course again in 2025-2026. Since Koa was replaced with NestJS there a
 5. [Relaties](2025/005_relaties.md)
 6. [Validatie](2025/006_validatie.md)
 7. [Authenticatie en autorisatie](2025/007_authenticatie_en_autorisatie.md)
+
+## Content 2026-2027
+
+- [Intro](2026/00_intro.md)
+- [Algemene info](2026/01_algemene_info.md)
+- [Software](2026/02_software.md)
+- [Examenopdracht](2026/03_examenopdracht.md)
+- [AI statement](2026/04_ai_statement.md)
