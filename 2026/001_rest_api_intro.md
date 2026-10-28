@@ -12,7 +12,7 @@
 
 Binnen Web Services zullen we werken met TypeScript. TypeScript is een superset van JavaScript die statische types toevoegt aan de taal. Dit betekent dat je variabelen, functies en objecten kunt annoteren met types, waardoor je fouten kunt opsporen tijdens het ontwikkelen in plaats van tijdens runtime. TypeScript biedt ook geavanceerde functies zoals interfaces, generics en decorateurs, die helpen bij het schrijven van robuuste en onderhoudbare code. TypeScript wordt vaak gebruikt in combinatie met Node.js en frameworks zoals NestJS, omdat het de ontwikkelaar een betere tooling en foutopsporing biedt.
 
-In deze cursus zullen we geleidelijk aan TypeScript features introduceren, maar het is aan te raden om zelf ook wat tijd te investeren in het leren van TypeScript. Er zijn veel online bronnen beschikbaar, zoals de officiële [TypeScript-documentatie](https://www.typescriptlang.org/docs/) en interactieve tutorials zoals [TypeScript for Beginners](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html). Daarnaast hebben we ook een [appendix over TypeScript](./app_typescript.md) in deze cursus, waar je het absolute minimum aan TypeScript-kennis kan terugvinden die je nodig hebt voor deze cursus.
+In deze cursus zullen we geleidelijk aan TypeScript features introduceren, maar het is aan te raden om zelf ook wat tijd te investeren in het leren van TypeScript. Er zijn veel online bronnen beschikbaar, zoals de officiële [TypeScript-documentatie](https://www.typescriptlang.org/docs/) en interactieve tutorials zoals [TypeScript for Beginners](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html). Daarnaast hebben we ook een [appendix over TypeScript](../appendices/1-typescript/index.md) in deze cursus, waar je het absolute minimum aan TypeScript-kennis kan terugvinden die je nodig hebt voor deze cursus.
 
 ## Wat is een API?
 
@@ -20,7 +20,7 @@ In deze cursus zullen we geleidelijk aan TypeScript features introduceren, maar 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/s7wmiS2mSXY?si=71jKO3ESmuAMyDTl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <!-- markdownlint-enable -->
 
-Een **`API (Application Programming Interface)`** is een software-interface die het mogelijk maakt dat twee applicaties met elkaar kunnen communiceren. Dit in tegenstelling tot een User Interface, die mensen met software laat werken. Ze maken de overdracht van gegevens van systeem naar systeem mogelijk. API’s bieden een gestandaardiseerde toegang tot de applicatiegegevens.
+Een **API (Application Programming Interface)** is een software-interface die het mogelijk maakt dat twee applicaties met elkaar kunnen communiceren. Dit in tegenstelling tot een User Interface, die mensen met software laat werken. Ze maken de overdracht van gegevens van systeem naar systeem mogelijk. API’s bieden een gestandaardiseerde toegang tot de applicatiegegevens.
 
 ### Voorbeeld van het gebruik van een API
 
@@ -36,13 +36,13 @@ Nu doemt de vraag op: hoe communiceren deze twee programma's met elkaar?
 
 In theorie zou je SQL-query's (vanuit de client) over een netwerk kunnen verzenden en de resultaten kunnen ontvangen, maar al snel zul je inzien dat dit niet de beste aanpak is. Zelfs kleine wijzigingen in het databankschema zouden vereisen dat alle clients volledig herschreven moeten worden.
 
-Daarom is het noodzakelijk om een efficiëntere methode te gebruiken om gegevens (en wijzigingen daarin) over het netwerk te verzenden, en `REST` is een van deze methoden.
+Daarom is het noodzakelijk om een efficiëntere methode te gebruiken om gegevens (en wijzigingen daarin) over het netwerk te verzenden, en **REST** is een van deze methoden.
 
 ## REST
 
-`Representational state transfer (REST)` is een `architectuurstijl` waarmee software met andere software kan communiceren. De term werd geïntroduceerd en gedefinieerd in 2000 door Roy Fielding in zijn [doctoraatsstudie](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm). REST wordt veelal gebruikt voor het ontwerpen van API's voor het internet. REST gebruikt de `HTTP-methoden (GET / POST / PUT /DELETE)` om data tussen een client en een server op te halen en te verzenden.
+**Representational state transfer (REST)** is een **architectuurstijl** waarmee software met andere software kan communiceren. De term werd geïntroduceerd en gedefinieerd in 2000 door Roy Fielding in zijn [doctoraatsstudie](https://roy.gbiv.com/pubs/dissertation/fielding_dissertation.pdf). REST wordt veelal gebruikt voor het ontwerpen van API's voor het internet. REST gebruikt de **HTTP-methoden (GET / POST / PUT /DELETE)** om data tussen een client en een server op te halen en te verzenden.
 
-Met het HTTP-protocol kunnen REST API’s software op het ene apparaat laten praten met software op een ander apparaat (of op hetzelfde apparaat), zelfs als deze verschillende besturingssystemen en architecturen gebruiken. De client kan om `resources` vragen in een taal die de server begrijpt, en de server reageert met de resource in een taal die de client kan verwerken. De server retourneert de `resource` in `JSON` (JavaScript Object Notation), XML (Extensible Markup Language) of tekstindelingen, maar veel API’s ondersteunen responses in aanvullende talen.
+Met het HTTP-protocol kunnen REST API’s software op het ene apparaat laten praten met software op een ander apparaat (of op hetzelfde apparaat), zelfs als deze verschillende besturingssystemen en architecturen gebruiken. De client kan om **resources** vragen in een taal die de server begrijpt, en de server reageert met de resource in een taal die de client kan verwerken. De server retourneert de **resource** in **JSON** (JavaScript Object Notation), XML (Extensible Markup Language) of tekstindelingen, maar veel API’s ondersteunen responses in aanvullende talen.
 
 ### API requests
 
@@ -107,30 +107,30 @@ PUT en PATCH zijn beide methodes om een resource aan te passen. Het verschil is 
 
 De API-ontwikkelaar beslist welke formaten ze ondersteunen voor de response. Een server kan bijvoorbeeld reageren met JSON, XML of tekst. De API moet de mogelijkheid hebben om de response op te maken op basis van de behoeften van de client. In het voorbeeld van de klanten wordt JSON geretourneerd.
 
-Voor de responses wordt ook steeds een `HTTP status code` gebruikt. Bij een succesvol request wordt er een 2xx HTTP status code teruggegeven:
+Voor de responses wordt ook steeds een **HTTP status code** gebruikt. Bij een succesvol request wordt er een 2xx HTTP status code teruggegeven:
 
-| **Code** | **Status** | **Beschrijving**                                                                          |
-| -------- | ---------- | ----------------------------------------------------------------------------------------- |
-| **200**  | OK         | Het request is geslaagd.                                                                  |
-| **201**  | Created    | Een resource is aangemaakt met een **POST** request. Het antwoord bevat een _empty body_. |
-| **204**  | No Content | Een **PUT**, **PATCH** of **DELETE** request slaagt. Het antwoord bevat een _empty body_. |
+| Code    | Status     | Beschrijving                                                                        |
+| ------- | ---------- | ----------------------------------------------------------------------------------- |
+| **200** | OK         | Het request is geslaagd.                                                            |
+| **201** | Created    | Een resource is aangemaakt met een POST request. Het antwoord bevat een empty body. |
+| **204** | No Content | Een PUT, PATCH of DELETE request slaagt. Het antwoord bevat een empty body.         |
 
 Bij een foutmelding wordt een van de volgende status codes teruggegeven. Een code 4xx wordt gebruikt als de fout bij de client ligt, een code 5xx als de fout bij de server ligt.
 
-| **Code** | **Status**            | **Beschrijving**                                                                                                                       |
-| -------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| **400**  | Bad Request           | Het request is ongeldig (bv. foute parameters in URL of body).                                                                         |
-| **401**  | Unauthorized          | De authenticatie faalt, bv. door een onjuist wachtwoord of de client is simpelweg niet aangemeld.                                      |
-| **403**  | Forbidden             | De client is aangemeld maar heeft geen toegang tot de resource (= onvoldoende rechten).                                                |
-| **404**  | Not Found             | De resource is niet gevonden.                                                                                                          |
-| **405**  | Method Not Allowed    | De HTTP method is niet toegelaten voor deze resource.                                                                                  |
-| **406**  | Not Acceptable        | De client heeft een accept header gestuurd die niet ondersteund wordt (bv. XML gevraagd terwijl de server enkel JSON kan retourneren). |
-| **429**  | Too Many Requests     | De client heeft te veel requests gestuurd in een bepaalde tijdspanne.                                                                  |
-| **500**  | Internal Server Error | Er is een fout opgetreden aan de serverkant.                                                                                           |
-| **501**  | Not Implemented       | Het endpoint is niet geïmplementeerd.                                                                                                  |
-| **503**  | Service Unavailable   | De server is tijdelijk niet beschikbaar.                                                                                               |
+| Code    | Status                | Beschrijving                                                                                                                              |
+| ------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **400** | Bad Request           | Het request is ongeldig (bv. foute parameters in URL of body).                                                                            |
+| **401** | Unauthorized          | De authenticatie faalt, bv. door een onjuist wachtwoord of de client is simpelweg niet aangemeld.                                         |
+| **403** | Forbidden             | De client is aangemeld maar heeft geen toegang tot de resource (= onvoldoende rechten).                                                   |
+| **404** | Not Found             | De resource is niet gevonden.                                                                                                             |
+| **405** | Method Not Allowed    | De HTTP method is niet toegelaten voor deze resource.                                                                                     |
+| **406** | Not Acceptable        | De client heeft een accept header gestuurd die niet ondersteund wordt (bv. gevraagd om XML terwijl de server enkel JSON kan retourneren). |
+| **429** | Too Many Requests     | De client heeft te veel requests gestuurd in een bepaalde tijdspanne.                                                                     |
+| **500** | Internal Server Error | Er is een fout opgetreden aan de serverkant.                                                                                              |
+| **501** | Not Implemented       | Het endpoint is niet geïmplementeerd.                                                                                                     |
+| **503** | Service Unavailable   | De server is tijdelijk niet beschikbaar.                                                                                                  |
 
-Een volledige lijst van HTTP status codes kan je vinden op <https://developer.mozilla.org>.
+Een volledige lijst van HTTP status codes kan je vinden op [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 
 ### REST architectuurstijl
 
@@ -314,6 +314,8 @@ Door de jaren heen merkten we een aantal terugkomende fouten in het ontwerp van 
 
 Onderstaand ERD zou een oplossing zijn voor onze receptenapplicatie, vol met bovenstaande veelgemaakte fouten:
 
+![Oplossing met FME](https://kroki.io/erd/svg/eNqLDkpNzixIjeXSykvMTeXiivbMSy9KTclMzSuBiSXm5pfmlXCV5mWWAOVDi1OLgDKZKVxpmUXFJX4gFTmJUEZiSkpRanExFxdIlYKhrq6WAsR8LggFEUJYAVGnhaQOAI2aLp8=)
+
 <!-- markdownlint-disable -->
 <p align="center">
   <img src="img/02_fout_erd.svg" style="width:50%;" alt="fout_erd">
@@ -347,6 +349,8 @@ Wat is er fout aan dit ERD?
 ### ERD
 
 Een mogelijke oplossing ziet eruit als volgt:
+
+![Oplossing ERD](https://kroki.io/erd/svg/eNpNjjEOwjAMRXefonOqDL0CTF0YQEwVQ2g-KFKTVI6DxO1pSAWZ_GU9P__pjNmtuJFyloLxoH5mGIE9vImmMTwZ1iFIQxgfcxDKwQn1_L0f7QZfE7hiD8dJToVdzB6SMCAUsr-DaY1JzHKMFjQ7KZ8u5gX7K9PnzbVJVeMv-m7QWnUVozrq6l-04RonNblTWg-75AMGd1SG)
 
 <!-- markdownlint-disable -->
 <p align="center">
@@ -448,7 +452,15 @@ Daarom gebruiken we [pnpm](https://pnpm.io/), een alternatieve package manager d
 
 ## NestJS
 
-Als IT'er is het belangrijk om te leren documentatie te lezen. De documentatie van NestJS is zeer uitgebreid en goed geschreven. We raden je aan om de documentatie grondig door te nemen, zeker als je vastloopt of iets niet begrijpt. De documentatie is beschikbaar op <https://docs.nestjs.com/>.
+Als IT'er is het belangrijk om te leren documentatie te lezen.
+De documentatie van NestJS is zeer uitgebreid en goed geschreven.
+We raden je aan om de documentatie grondig door te nemen, zeker als je vastloopt of iets niet begrijpt.
+De documentatie is beschikbaar op <https://docs.nestjs.com/>.
+
+> Wanneer je het minimum van NestJS kent, kan het echter efficiënter zijn om gerichte vragen te stellen aan je AI-tool over hoe je het framework gebruikt.
+
+Dit zal je een hoop zoekwerk in de documentatie kunnen besparen.
+Hierbij kan je best wel vragen naar referenties, zodat je kan controleren of je wel de nieuwste/correcte uitleg krijgt.
 
 Om deze trend goed in te zetten, beginnen we met het lezen van de ["Introduction" sectie](https://docs.nestjs.com/) van de NestJS documentatie. Deze sectie geeft een beknopt overzicht van wat NestJS is, wat het doet, waarom je het zou gebruiken en hoe je een project opzet.
 
@@ -464,6 +476,8 @@ Allereerst installeer je de NestJS CLI globaal op je systeem. Dit kan je doen me
 pnpm add -g @nestjs/cli
 ```
 
+> Krijg je een fout over de globale bin directory van pnpm? Voer dan `pnpm setup` uit, open een nieuwe terminal en probeer opnieuw.
+
 Vervolgens maken we een nieuw project aan met de CLI. Dit kan je doen met het onderstaand commando. Tijdens de installatie kies je voor `pnpm` als package manager.
 
 > **Info voor de examenopdracht**: zorg ervoor dat je onderstaand commando in de root van jouw GitHub Classroom repository uitvoert, anders zal het project niet in de juiste map aangemaakt worden. Natuurlijk kan je het nadien verplaatsen.
@@ -471,7 +485,10 @@ Vervolgens maken we een nieuw project aan met de CLI. Dit kan je doen met het on
 ```bash
 nest new --strict webservices-budget
 
-# Kies voor pnpm als package manager
+#Beantwoord de vragen van de CLI als volgt:
+# Package manager: pnpm
+# setup @nestjs/observer: No
+# module system: CommonJS (with jest)
 ```
 
 Hiermee maken we een nieuw NestJS project aan in de map `webservices-budget`. De `--strict` optie zorgt ervoor dat TypeScript strict is ingesteld, wat we aanraden om bugs te voorkomen. Dit is een goede gewoonte, zeker als je met TypeScript werkt. Het project wordt aangemaakt met de standaard mappenstructuur en een aantal voorbeeldbestanden.
@@ -507,7 +524,19 @@ Voor de volledigheid kan je ook de volgende properties voorzien:
 - `main`: het entry point van de applicatie
 - `repository`: informatie over de repository van de applicatie
 
-Met een simpele `pnpn install` installeren we meteen een identieke omgeving (met zowel `dependencies` als `devDependencies`) en dat maakt het handiger om in een team te werken (`pnpm install --prod` installeert enkel de `dependencies`).
+Met een simpele `pnpm install` installeren we meteen een identieke omgeving (met zowel `dependencies` als `devDependencies`) en dat maakt het handiger om in een team te werken (`pnpm install --prod` installeert enkel de `dependencies`).
+
+```bash
+pnpm install
+
+# je krijgt nog een error ERR_PNPM_IGNORED_BUILDS. Dit los je op met:
+
+pnpm approve-builds
+
+# press enter om de build (@parcel/watcher en unrs-resolver) te accepteren
+```
+
+Sinds pnpm 10 worden installatiescripts van dependencies niet zomaar uitgevoerd. Met `pnpm approve-builds` kun je vertrouwde pakketten goedkeuren; pnpm slaat die keuze op in de workspaceconfiguratie. Zo voorkom je dat elke dependency automatisch code uitvoert.
 
 Het verschil tussen `dependencies` en `devDependencies` is het moment wanneer ze gebruikt worden. De `dependencies` zijn nodig in productie, m.a.w. de applicatie kan niet werken zonder deze packages. De `devDependencies` zijn enkel nodig om bv. het leven van de developer makkelijker te maken (types in TypeScript, linting, etc.) of bevatten packages die enkel gebruikt worden at build time, of dus wanneer de applicatie (bv. door webpack) omgevormd wordt tot iets wat browsers begrijpen.
 
@@ -565,11 +594,13 @@ NestJS gebruikt TypeScript, een superset van JavaScript die statische types toev
 
 Normaal gesproken hoef je aan dit bestand niets te wijzigen, tenzij je specifieke wensen hebt. Voor ons project gaan we de `baseUrl` **optie verwijderen** uit `compilerOptions`. Het is niet aan te raden deze optie te gebruiken, omdat dit kan zorgen voor problemen en verwarring bij imports.
 
-### eslint.config.js
+### .oxlintrc.json (nestJS v12) of eslint.config.js (oudere nestJS versies)
 
-NestJS gebruikt ESLint om de code te linten. Linten is het controleren van de code op stijl- en programmeerfouten. Het bestand `eslint.config.js` bevat de configuratie voor ESLint. Open het bestand en bekijk de inhoud. Ook hier hoef je normaal niets aan te wijzigen, tenzij je specifieke wensen hebt. Meer info over ESLint vind je op <https://eslint.org/docs/latest/user-guide/configuring>.
+NestJS gebruikt `OxLint`(een ESLint-compatible linter) of `ESLint` om de code te linten. Linten is het controleren van de code op stijl- en programmeerfouten. Het bestand `oxlintrc.json` (of `eslint.config.js`) bevat de configuratie voor de linter. Open het bestand en bekijk de inhoud. Ook hier hoef je normaal niets aan te wijzigen, tenzij je specifieke wensen hebt dan kan je de rules verder aanpassen. De property `env` schakelt de Node.js omgeving in.
 
-Indien je de foutmelding `'Delete CR (eslint - prettier/prettier)'` krijgt bij het openen van `app.module.ts`, voeg dan volgende regel toe aan `.prettierrc`:
+Meer info over OxLint vind je op <https://oxc.rs/docs/guide/usage/linter.html> en over ESLint op <https://eslint.org/docs/latest/user-guide/configuring>.
+
+Indien je de foutmelding ''Delete CR (eslint - prettier/prettier)' krijgt bij het openen van `app.module.ts`, voeg dan volgende regel toe aan `.prettierrc`:
 
 ```json
   "endOfLine": "auto"
@@ -766,6 +797,7 @@ Maak nu je webservice aan:
 - (1) **Projectnaam**: Kies een duidelijke naam met suffix zoals `-webservice` of `-api`
 - (2) **Locatie**: Maak het project aan in de root van je GitHub repository
 - (3) **Setup**: Volg de NestJS setup stappen zoals eerder beschreven
+- (4) Verwijder .git folder in de webservice map (de .git folder is al in de root van je repository aanwezig).
 
 ### Stap 5: Commit
 
@@ -792,9 +824,9 @@ Voeg de `HealthController` toe aan je project zoals eerder beschreven. Test of a
 ```bash
 git clone https://github.com/HOGENT-frontendweb/webservices-budget.git
 cd webservices-budget
-git checkout -b les2-opl a2cbdcd
+git checkout -b les1-opl 89add613
 pnpm install
 pnpm start:dev
 ```
 
-Laatste aanpassing op 06/10/2025 17:22
+Laatste aanpassing op 20/10/2026 16:01 (commit 740b527 Update naar laatste versie nestjs 12.0.8 2026/10/05)
